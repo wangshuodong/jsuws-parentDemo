@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+    <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+    <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+    <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+
+    <globalConfiguration>
+        <parameter name="sendMultiRefs" value="true"/>
+        <parameter name="disablePrettyXML" value="true"/>
+        <parameter name="adminPassword" value="admin"/>
+        <parameter name="attachments.Directory"
+                   value="D:\workspace_yidong\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jsuws-web\WEB-INF\attachments"/>
+        <parameter name="dotNetSoapEncFix" value="true"/>
+        <parameter name="enableNamespacePrefixOptimization" value="false"/>
+        <parameter name="sendXMLDeclaration" value="true"/>
+        <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+        <parameter name="sendXsiTypes" value="true"/>
+        <requestFlow>
+            <handler type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="session"/>
+            </handler>
+            <handler type="java:org.apache.axis.handlers.JWSHandler">
+                <parameter name="scope" value="request"/>
+                <parameter name="extension" value=".jwr"/>
+            </handler>
+            <handler name="log" type="java:org.apache.axis.handlers.LogHandler">
+                <parameter name="LogHandler.fileName" value="G:\axis.log" /> <!-- 目录必须存在 -->
+            </handler>
+        </requestFlow>
+    </globalConfiguration>
+
+    <service name="OperationDistributeService" provider="java:RPC">
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <parameter name="wsdlPortType" value="ItmsOrderInterface"/>
+        <parameter name="className" value="com.cmiot.jsuws.wsb.cms.OperationDistributeServiceSoapBindingSkeleton"/>
+        <parameter name="wsdlServicePort" value="OperationDistributeService"/>
+        <parameter name="wsdlTargetNamespace"
+                   value="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"/>
+        <parameter name="wsdlServiceElement" value="ItmsOrderInterfaceService"/>
+        <parameter name="schemaUnqualified"
+                   value="OperationDistributeService,http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService,http://order.idl.itms.zznode.com"/>
+    </service>
+    <service name="AMSService" provider="java:RPC">
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="wsdlPortType" value="AMSService"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <parameter name="wsdlServicePort" value="AMSService"/>
+        <parameter name="className" value="com.cmiot.jsuws.wsb.ams.AMSServiceSoapBindingSkeleton"/>
+        <parameter name="wsdlTargetNamespace" value="http://10.40.103.47:5482/NorthInterface/services/AMSService"/>
+        <parameter name="wsdlServiceElement" value="AMSServiceService"/>
+        <parameter name="schemaUnqualified" value="http://10.40.103.47:5482/NorthInterface/services/AMSService"/>
+    </service>
+    <service name="PonServiceFacadeImpl" provider="java:RPC" style="wrapped" use="literal">
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <parameter name="wsdlPortType" value="PonServiceFacadeImpl"/>
+        <parameter name="className" value="com.cmiot.jsuws.wsb.pon.PonServiceFacadeImplSoapBindingSkeleton"/>
+        <parameter name="wsdlServicePort" value="PonServiceFacadeImpl"/>
+        <parameter name="schemaQualified"
+                   value="http://model.pon.facade.jsuws.cmiot.com,http://pon.wsb.jsuws.cmiot.com"/>
+        <parameter name="wsdlTargetNamespace" value="http://pon.wsb.jsuws.cmiot.com"/>
+        <parameter name="wsdlServiceElement" value="PonServiceFacadeImplService"/>
+    </service>
+    <service name="PonService" provider="java:RPC">
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="typeMappingVersion" value="1.2"/>
+        <parameter name="wsdlPortType" value="PonService"/>
+        <parameter name="className" value="com.cmiot.jsuws.wsb.wlan.PonServiceSoapBindingSkeleton"/>
+        <parameter name="wsdlServicePort" value="PonService"/>
+        <parameter name="wsdlTargetNamespace" value="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+        <parameter name="wsdlServiceElement" value="PonServiceService"/>
+        <parameter name="schemaUnqualified"
+                   value="http://183.207.194.218:6482/NorthInterface/services/PonService,http://xml.apache.org/xml-soap"/>
+    </service>
+    <transport name="http">
+        <requestFlow>
+            <handler type="URLMapper"/>
+            <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+        </requestFlow>
+        <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+        <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+        <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+        <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+        <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+        <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+    </transport>
+    <transport name="local">
+        <responseFlow>
+            <handler type="LocalResponder"/>
+        </responseFlow>
+    </transport>
+</deployment>

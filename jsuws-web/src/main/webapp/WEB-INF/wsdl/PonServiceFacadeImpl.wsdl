@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://pon.wsb.jsuws.cmiot.com" xmlns:intf="http://pon.wsb.jsuws.cmiot.com" xmlns:tns1="http://model.pon.facade.jsuws.cmiot.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pon.wsb.jsuws.cmiot.com">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://pon.wsb.jsuws.cmiot.com">
+   <import namespace="http://model.pon.facade.jsuws.cmiot.com"/>
+   <element name="PonActToCms">
+    <complexType>
+     <sequence>
+      <element name="ponActRequest" type="tns1:PonActRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="PonActToCmsResponse">
+    <complexType>
+     <sequence>
+      <element name="PonActToCmsReturn" type="tns1:PonActResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://model.pon.facade.jsuws.cmiot.com">
+   <complexType name="PonActRequest">
+    <sequence>
+     <element name="AUTH" nillable="true" type="xsd:string"/>
+     <element name="DOWNBW" nillable="true" type="xsd:string"/>
+     <element name="UPBW" nillable="true" type="xsd:string"/>
+     <element name="accountId" nillable="true" type="xsd:string"/>
+     <element name="content" nillable="true" type="xsd:string"/>
+     <element name="cvlan" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="gimsUserType" nillable="true" type="xsd:string"/>
+     <element name="loid" nillable="true" type="xsd:string"/>
+     <element name="oltIp" nillable="true" type="xsd:string"/>
+     <element name="oltPonPort" nillable="true" type="xsd:string"/>
+     <element name="onuMac" nillable="true" type="xsd:string"/>
+     <element name="onuManufacturer" nillable="true" type="xsd:string"/>
+     <element name="onuType" nillable="true" type="xsd:string"/>
+     <element name="orderId" nillable="true" type="xsd:string"/>
+     <element name="ponType" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+     <element name="siteName" nillable="true" type="xsd:string"/>
+     <element name="subFc" nillable="true" type="xsd:string"/>
+     <element name="svlan" nillable="true" type="xsd:string"/>
+     <element name="taskId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PonActResponse">
+    <sequence>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="orderId" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+     <element name="taskId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="PonActToCmsRequest">
+
+      <wsdl:part element="impl:PonActToCms" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="PonActToCmsResponse">
+
+      <wsdl:part element="impl:PonActToCmsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PonServiceFacadeImpl">
+
+      <wsdl:operation name="PonActToCms">
+
+         <wsdl:input message="impl:PonActToCmsRequest" name="PonActToCmsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:PonActToCmsResponse" name="PonActToCmsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PonServiceFacadeImplSoapBinding" type="impl:PonServiceFacadeImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="PonActToCms">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="PonActToCmsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="PonActToCmsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PonServiceFacadeImplService">
+
+      <wsdl:port binding="impl:PonServiceFacadeImplSoapBinding" name="PonServiceFacadeImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/jsuws/services/PonServiceFacadeImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

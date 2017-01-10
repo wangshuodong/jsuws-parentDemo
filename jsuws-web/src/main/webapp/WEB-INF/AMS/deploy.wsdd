@@ -1,0 +1,242 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AMSServiceService WSDL service -->
+
+  <service name="AMSService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://10.40.103.47:5482/NorthInterface/services/AMSService"/>
+      <parameter name="wsdlServiceElement" value="AMSServiceService"/>
+      <parameter name="schemaUnqualified" value="http://10.40.103.47:5482/NorthInterface/services/AMSService"/>
+      <parameter name="wsdlServicePort" value="AMSService"/>
+      <parameter name="className" value="com.cmiot.jsuws.wsb.ams.AMSServiceSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="AMSService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ResetDeviceResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.ResetDeviceResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ReplaceDeviceResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.ReplaceDeviceResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryServiceStatusResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryServiceStatusResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryServiceStatusResponseServiceList"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryServiceStatusResponseServiceList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:DeviceByHandRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.DeviceByHandRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:SendImplementedInfoRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.SendImplementedInfoRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryOrderResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryOrderResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDeviceByLoidRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDeviceByLoidRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryOrderRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryOrderRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryServiceStatusRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryServiceStatusRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:SendImplementedInfoRequestServiceCodeList"
+        type="java:com.cmiot.jsuws.facade.ams.model.SendImplementedInfoRequestServiceCodeList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:GetRemoteOperationResultResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.GetRemoteOperationResultResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:DeviceByHandResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.DeviceByHandResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ResetDeviceRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.ResetDeviceRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ReplaceDeviceResponseServiceCodeList"
+        type="java:com.cmiot.jsuws.facade.ams.model.ReplaceDeviceResponseServiceCodeList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:GetRemoteOperationResultRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.GetRemoteOperationResultRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDeviceBySNResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDeviceBySNResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ReplaceDeviceRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.ReplaceDeviceRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ResetServicesResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.ResetServicesResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDeviceByLoidResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDeviceByLoidResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ResetServicesResponseServiceCodeList"
+        type="java:com.cmiot.jsuws.facade.ams.model.ResetServicesResponseServiceCodeList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDevicePasswordRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDevicePasswordRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDevicePasswordResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDevicePasswordResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:ResetServicesRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.ResetServicesRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryOrderResponseOrderList"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryOrderResponseOrderList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:QueryDeviceBySNRequest"
+        type="java:com.cmiot.jsuws.facade.ams.model.QueryDeviceBySNRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://10.40.103.47:5482/NorthInterface/services/AMSService"
+        qname="ns:SendImplementedInfoResponse"
+        type="java:com.cmiot.jsuws.facade.ams.model.SendImplementedInfoResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <bean id="amsServiceFacade" class="com.cmiot.jsuws.wsb.impl.AMSServiceFacadeImpl"/>
+    <dubbo:service interface="com.cmiot.jsuws.facade.ams.AMSServiceFacade" ref="amsServiceFacade"/>
+
+    <bean id="cmsServiceFacade" class="com.cmiot.jsuws.wsb.impl.CMSServiceFacadeImpl"/>
+    <dubbo:service interface="com.cmiot.jsuws.facade.cms.CMSServiceFacade" ref="cmsServiceFacade"/>
+
+    <bean id="ponServiceFacade" class="com.cmiot.jsuws.wsb.impl.PonServiceFacadeImpl"/>
+    <dubbo:service interface="com.cmiot.jsuws.facade.pon.PonServiceFacade" ref="ponServiceFacade"/>
+
+    <bean id="wlanServiceFacade" class="com.cmiot.jsuws.wsb.impl.WlanServiceFacadeImpl"/>
+    <dubbo:service interface="com.cmiot.jsuws.facade.wlan.WlanServiceFacade" ref="wlanServiceFacade"/>
+
+</beans>

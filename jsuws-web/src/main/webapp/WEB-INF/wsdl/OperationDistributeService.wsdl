@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" xmlns:intf="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="OperationDistributeService" xmlns:tns2="http://order.idl.itms.zznode.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService">
+    <!--WSDL created by Apache Axis version: 1.4 Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService">
+            <import namespace="http://order.idl.itms.zznode.com"/>
+            <import namespace="OperationDistributeService"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ArrayOf_soapenc_string">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="soapenc:string[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ServiceStatusReqStruct">
+                <sequence>
+                    <element name="userId" nillable="true" type="soapenc:string"/>
+                    <element name="serviceCode" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfServiceStatusReqStruct">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:ServiceStatusReqStruct[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="ServiceStatusRespStruct">
+                <sequence>
+                    <element name="userId" nillable="true" type="soapenc:string"/>
+                    <element name="serviceCode" nillable="true" type="soapenc:string"/>
+                    <element name="serviceStatus" nillable="true" type="soapenc:string"/>
+                    <element name="desp" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfServiceStatusRespStruct">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:ServiceStatusRespStruct[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="OrderResponse">
+                <sequence>
+                    <element name="orderId" nillable="true" type="soapenc:string"/>
+                    <element name="finishDate" nillable="true" type="soapenc:string"/>
+                    <element name="orderResult" nillable="true" type="soapenc:string"/>
+                    <element name="finshReason" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOf_xsd_anyType">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:anyType[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="CreatServiceReq">
+                <sequence>
+                    <element name="_ADPASSWORD" nillable="true" type="soapenc:string"/>
+                    <element name="_CITYNO" nillable="true" type="soapenc:string"/>
+                    <element name="_CONTACTMAN" nillable="true" type="soapenc:string"/>
+                    <element name="_CONTACTPHONE" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTADDR" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTCARDNO" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTCARDTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTFLAG" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTGRADE" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTNAME" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTSYSID" nillable="true" type="soapenc:string"/>
+                    <element name="_CUSTTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_Document" nillable="true" type="soapenc:string"/>
+                    <element name="_HOMEASSIST" nillable="true" type="soapenc:string"/>
+                    <element name="_INDUSTRYTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_MGRNO" nillable="true" type="soapenc:string"/>
+                    <element name="_MGRTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_NUM" nillable="true" type="soapenc:string"/>
+                    <element name="_OPERDATE" nillable="true" type="soapenc:string"/>
+                    <element name="_ORD_NO" nillable="true" type="soapenc:string"/>
+                    <element name="_PACK_ID" nillable="true" type="soapenc:string"/>
+                    <element name="_PACK_NAME" nillable="true" type="soapenc:string"/>
+                    <element name="_PARAMETERLIST" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+                    <element name="_PRODNO" nillable="true" type="soapenc:string"/>
+                    <element name="_PVC" nillable="true" type="soapenc:string"/>
+                    <element name="_SERIAL_NUMBER" nillable="true" type="soapenc:string"/>
+                    <element name="_SITECODE" nillable="true" type="soapenc:string"/>
+                    <element name="_STAFFCODE" nillable="true" type="soapenc:string"/>
+                    <element name="_UPLINKTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_USERADDR" nillable="true" type="soapenc:string"/>
+                    <element name="_USERBRANCH" nillable="true" type="soapenc:string"/>
+                    <element name="_USERBUREAU" nillable="true" type="soapenc:string"/>
+                    <element name="_USERCARDNO" nillable="true" type="soapenc:string"/>
+                    <element name="_USERCARDTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_USERID" nillable="true" type="soapenc:string"/>
+                    <element name="_USERNAME" nillable="true" type="soapenc:string"/>
+                    <element name="_USERTYPE" nillable="true" type="soapenc:string"/>
+                    <element name="_disctsReq" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+                    <element name="_subService" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+                    <element name="disctsReqInstance" nillable="true" type="tns1:DisctsReq"/>
+                    <element name="paraInstance" nillable="true" type="tns1:ParaMeter"/>
+                    <element name="subServiceInstance" nillable="true" type="tns1:SubServiceReq"/>
+                </sequence>
+            </complexType>
+            <complexType name="AlarmStruct">
+                <sequence>
+                    <element name="strAlarmID" nillable="true" type="soapenc:string"/>
+                    <element name="strLevel" nillable="true" type="soapenc:string"/>
+                    <element name="strSource" nillable="true" type="soapenc:string"/>
+                    <element name="strSourceType" nillable="true" type="soapenc:string"/>
+                    <element name="iAlarmNum" type="xsd:int"/>
+                    <element name="strCause" nillable="true" type="soapenc:string"/>
+                    <element name="strAdvice" nillable="true" type="soapenc:string"/>
+                    <element name="alarmTime" nillable="true" type="soapenc:string"/>
+                    <element name="content" nillable="true" type="soapenc:string"/>
+                    <element name="solution" nillable="true" type="soapenc:string"/>
+                    <element name="ip" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfAlarmStruct">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:AlarmStruct[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="PVCMsg">
+                <sequence>
+                    <element name="PVCEnable" nillable="true" type="soapenc:string"/>
+                    <element name="PVCName" nillable="true" type="soapenc:string"/>
+                    <element name="PVCService" nillable="true" type="soapenc:string"/>
+                    <element name="PVCStatus" nillable="true" type="soapenc:string"/>
+                    <element name="PVCType" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfPVCMsg">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:PVCMsg[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="CPEMsg">
+                <sequence>
+                    <element name="CPEType" nillable="true" type="soapenc:string"/>
+                    <element name="PVCMsg" nillable="true" type="impl:ArrayOfPVCMsg"/>
+                    <element name="SEQNBR" nillable="true" type="soapenc:string"/>
+                    <element name="errorCode" nillable="true" type="soapenc:string"/>
+                    <element name="onlineStatus" nillable="true" type="soapenc:string"/>
+                    <element name="versionStatus" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="UserDetail">
+                <sequence>
+                    <element name="user_name" nillable="true" type="soapenc:string"/>
+                    <element name="user_address" nillable="true" type="soapenc:string"/>
+                    <element name="ad_account" nillable="true" type="soapenc:string"/>
+                    <element name="cpe_id" nillable="true" type="soapenc:string"/>
+                    <element name="cpe_status" nillable="true" type="soapenc:string"/>
+                    <element name="online_status" nillable="true" type="soapenc:string"/>
+                    <element name="version_status" nillable="true" type="soapenc:string"/>
+                    <element name="cpe_version" nillable="true" type="soapenc:string"/>
+                    <element name="wifi_status" nillable="true" type="soapenc:string"/>
+                    <element name="last_connect" nillable="true" type="soapenc:string"/>
+                    <element name="cpe_domain" nillable="true" type="soapenc:string"/>
+                    <element name="cpe_service" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ArrayOfUserDetail">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:UserDetail[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="OperationDistributeService">
+            <import namespace="http://order.idl.itms.zznode.com"/>
+            <import namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="Order">
+                <sequence>
+                    <element name="orderId" nillable="true" type="soapenc:string"/>
+                    <element name="orderTime" nillable="true" type="soapenc:string"/>
+                    <element name="orderType" nillable="true" type="soapenc:string"/>
+                    <element name="serviceCode" nillable="true" type="soapenc:string"/>
+                    <element name="deviceWan" nillable="true" type="soapenc:string"/>
+                    <element name="userType" nillable="true" type="soapenc:string"/>
+                    <element name="deviceId" nillable="true" type="soapenc:string"/>
+                    <element name="userName" nillable="true" type="soapenc:string"/>
+                    <element name="userAddress" nillable="true" type="soapenc:string"/>
+                    <element name="pppoeAccount" nillable="true" type="soapenc:string"/>
+                    <element name="userMainid" nillable="true" type="soapenc:string"/>
+                    <element name="userId" nillable="true" type="soapenc:string"/>
+                    <element name="areaCode" nillable="true" type="soapenc:string"/>
+                    <element name="subAreaCode" nillable="true" type="soapenc:string"/>
+                    <element name="contactPerson" nillable="true" type="soapenc:string"/>
+                    <element name="phoneNumber" nillable="true" type="soapenc:string"/>
+                    <element name="vectorArgues" nillable="true" type="soapenc:string"/>
+                    <element name="orderKind" nillable="true" type="soapenc:string"/>
+                    <element name="cpeType" nillable="true" type="soapenc:string"/>
+                    <element name="supplyName" nillable="true" type="soapenc:string"/>
+                    <element name="terminalClass" nillable="true" type="soapenc:string"/>
+                    <element name="companyName" nillable="true" type="soapenc:string"/>
+                    <element name="companyID" nillable="true" type="soapenc:string"/>
+                    <element name="className" nillable="true" type="soapenc:string"/>
+                    <element name="classID" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="DisctsReq">
+                <sequence>
+                    <element name="_ACTIONID" nillable="true" type="soapenc:string"/>
+                    <element name="_EFFDATE" nillable="true" type="soapenc:string"/>
+                    <element name="_EXPDATE" nillable="true" type="soapenc:string"/>
+                    <element name="_PACKGROUP" nillable="true" type="soapenc:string"/>
+                    <element name="_PACKNAME" nillable="true" type="soapenc:string"/>
+                    <element name="_PACKNO" nillable="true" type="soapenc:string"/>
+                    <element name="_PARAMETERLIST" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+                    <element name="_SUBPRACKESC" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ParaMeter">
+                <sequence>
+                    <element name="_PARANAME" nillable="true" type="soapenc:string"/>
+                    <element name="_PARAVALUE" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="SubServiceReq">
+                <sequence>
+                    <element name="_ACTIONID" nillable="true" type="soapenc:string"/>
+                    <element name="_EFFDATE" nillable="true" type="soapenc:string"/>
+                    <element name="_EXPDATE" nillable="true" type="soapenc:string"/>
+                    <element name="_PARAMETERLIST" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+                    <element name="_SUBPRODDESC" nillable="true" type="soapenc:string"/>
+                    <element name="_SUBPRODNAME" nillable="true" type="soapenc:string"/>
+                    <element name="_SUBPRODNO" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+        </schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://order.idl.itms.zznode.com">
+            <import namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"/>
+            <import namespace="OperationDistributeService"/>
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="OrderServiceStruct">
+                <sequence>
+                    <element name="orderServiceId" type="xsd:long"/>
+                    <element name="orderId" type="xsd:long"/>
+                    <element name="servName" nillable="true" type="soapenc:string"/>
+                    <element name="servFlag" nillable="true" type="soapenc:string"/>
+                    <element name="argsName" nillable="true" type="soapenc:string"/>
+                    <element name="argsValueNew" nillable="true" type="soapenc:string"/>
+                    <element name="argsValueOld" nillable="true" type="soapenc:string"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="populateOrderServiceStructResponse">
+        <wsdl:part name="populateOrderServiceStructReturn" type="tns2:OrderServiceStruct"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderWithReplyRequest">
+        <wsdl:part name="order" type="tns1:Order"/>
+        <wsdl:part name="replyURL" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="queryServiceStatusRequest">
+        <wsdl:part name="req" type="impl:ArrayOfServiceStatusReqStruct"/>
+    </wsdl:message>
+    <wsdl:message name="queryCPEIDRequest">
+        <wsdl:part name="strCPEShortID" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusWithReplyResponse">
+        <wsdl:part name="queryOrderStatusWithReplyReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusConfirmRequest">
+        <wsdl:part name="cpeID" type="impl:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="truncateStringRequest">
+        <wsdl:part name="str" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="queryUserDetailResponse">
+        <wsdl:part name="queryUserDetailReturn" type="impl:ArrayOfUserDetail"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusResponse1">
+        <wsdl:part name="queryCpeStatusReturn" type="impl:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="bindInterfaceResponse">
+        <wsdl:part name="bindInterfaceReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="createServiceResponse">
+        <wsdl:part name="createServiceReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusWithReplyRequest">
+        <wsdl:part name="order" type="tns1:Order"/>
+        <wsdl:part name="replyURL" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderWithoutReplyRequest">
+        <wsdl:part name="order" type="tns1:Order"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusRequest">
+        <wsdl:part name="cpeId" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="bindInterfaceRequest">
+        <wsdl:part name="command" type="xsd:int"/>
+        <wsdl:part name="cpeId" type="soapenc:string"/>
+        <wsdl:part name="adAccounts" type="soapenc:string"/>
+        <wsdl:part name="nasPortId" type="soapenc:string"/>
+        <wsdl:part name="nasIP" type="soapenc:string"/>
+        <wsdl:part name="areaNum" type="soapenc:string"/>
+        <wsdl:part name="vlanId" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="serviceChangeRequest">
+        <wsdl:part name="adAcount" type="soapenc:string"/>
+        <wsdl:part name="LSHNo" type="soapenc:string"/>
+        <wsdl:part name="orderType" type="soapenc:string"/>
+        <wsdl:part name="newPassWord" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getAlarmInformationByTimeSegmentRequest">
+        <wsdl:part name="startTime" type="soapenc:string"/>
+        <wsdl:part name="endTime" type="soapenc:string"/>
+        <wsdl:part name="startAlarmID" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusRequest1">
+        <wsdl:part name="orderStatus" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderResponse">
+        <wsdl:part name="dealOrderReturn" type="impl:OrderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="routeCPEChargeResponse">
+        <wsdl:part name="routeCPEChargeReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryCPEIDResponse">
+        <wsdl:part name="queryCPEIDReturn" type="impl:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusResponse1">
+        <wsdl:part name="queryOrderStatusReturn" type="impl:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusConfirmRequest">
+        <wsdl:part name="orderNO" type="impl:ArrayOf_soapenc_string"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusRequest">
+        <wsdl:part name="order_No" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderWithReplyResponse">
+        <wsdl:part name="dealOrderWithReplyReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusConfirmResponse">
+        <wsdl:part name="queryOrderStatusConfirmReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="createServiceRequest">
+        <wsdl:part name="req" type="impl:CreatServiceReq"/>
+    </wsdl:message>
+    <wsdl:message name="routeCPEChargeRequest">
+        <wsdl:part name="prodNo" type="soapenc:string"/>
+        <wsdl:part name="accounts" type="soapenc:string"/>
+        <wsdl:part name="password" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderRequest">
+        <wsdl:part name="order" type="tns1:Order"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusConfirmResponse">
+        <wsdl:part name="queryCpeStatusConfirmReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="truncateStringResponse">
+        <wsdl:part name="truncateStringReturn" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getCPEMsgRequest">
+        <wsdl:part name="seqnbr" type="soapenc:string"/>
+        <wsdl:part name="ID" type="soapenc:string"/>
+        <wsdl:part name="iFlg" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusResponse">
+        <wsdl:part name="queryCpeStatusReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="populateOrderServiceStructRequest">
+        <wsdl:part name="newServiceCode" type="soapenc:string"/>
+        <wsdl:part name="servName" type="soapenc:string"/>
+        <wsdl:part name="servFlag" type="soapenc:string"/>
+        <wsdl:part name="argsValue" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="serviceChangeResponse">
+        <wsdl:part name="serviceChangeReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="getCPEMsgResponse">
+        <wsdl:part name="getCPEMsgReturn" type="impl:CPEMsg"/>
+    </wsdl:message>
+    <wsdl:message name="queryServiceStatusResponse">
+        <wsdl:part name="queryServiceStatusReturn" type="impl:ArrayOfServiceStatusRespStruct"/>
+    </wsdl:message>
+    <wsdl:message name="queryCpeStatusRequest1">
+        <wsdl:part name="cpeStatus" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderStatusResponse">
+        <wsdl:part name="queryOrderStatusReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="dealOrderWithoutReplyResponse">
+        <wsdl:part name="dealOrderWithoutReplyReturn" type="xsd:int"/>
+    </wsdl:message>
+    <wsdl:message name="queryUserDetailRequest">
+        <wsdl:part name="iParaType" type="xsd:int"/>
+        <wsdl:part name="value" type="soapenc:string"/>
+    </wsdl:message>
+    <wsdl:message name="getAlarmInformationByTimeSegmentResponse">
+        <wsdl:part name="getAlarmInformationByTimeSegmentReturn" type="impl:ArrayOfAlarmStruct"/>
+    </wsdl:message>
+    <wsdl:portType name="ItmsOrderInterface">
+        <wsdl:operation name="queryCPEID" parameterOrder="strCPEShortID">
+            <wsdl:input message="impl:queryCPEIDRequest" name="queryCPEIDRequest"/>
+            <wsdl:output message="impl:queryCPEIDResponse" name="queryCPEIDResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatus" parameterOrder="cpeId">
+            <wsdl:input message="impl:queryCpeStatusRequest" name="queryCpeStatusRequest"/>
+            <wsdl:output message="impl:queryCpeStatusResponse" name="queryCpeStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatus" parameterOrder="cpeStatus">
+            <wsdl:input message="impl:queryCpeStatusRequest1" name="queryCpeStatusRequest1"/>
+            <wsdl:output message="impl:queryCpeStatusResponse1" name="queryCpeStatusResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatus" parameterOrder="order_No">
+            <wsdl:input message="impl:queryOrderStatusRequest" name="queryOrderStatusRequest"/>
+            <wsdl:output message="impl:queryOrderStatusResponse" name="queryOrderStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatus" parameterOrder="orderStatus">
+            <wsdl:input message="impl:queryOrderStatusRequest1" name="queryOrderStatusRequest1"/>
+            <wsdl:output message="impl:queryOrderStatusResponse1" name="queryOrderStatusResponse1"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryServiceStatus" parameterOrder="req">
+            <wsdl:input message="impl:queryServiceStatusRequest" name="queryServiceStatusRequest"/>
+            <wsdl:output message="impl:queryServiceStatusResponse" name="queryServiceStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrder" parameterOrder="order">
+            <wsdl:input message="impl:dealOrderRequest" name="dealOrderRequest"/>
+            <wsdl:output message="impl:dealOrderResponse" name="dealOrderResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="populateOrderServiceStruct" parameterOrder="newServiceCode servName servFlag argsValue">
+            <wsdl:input message="impl:populateOrderServiceStructRequest" name="populateOrderServiceStructRequest"/>
+            <wsdl:output message="impl:populateOrderServiceStructResponse" name="populateOrderServiceStructResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="bindInterface" parameterOrder="command cpeId adAccounts nasPortId nasIP areaNum vlanId">
+            <wsdl:input message="impl:bindInterfaceRequest" name="bindInterfaceRequest"/>
+            <wsdl:output message="impl:bindInterfaceResponse" name="bindInterfaceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="createService" parameterOrder="req">
+            <wsdl:input message="impl:createServiceRequest" name="createServiceRequest"/>
+            <wsdl:output message="impl:createServiceResponse" name="createServiceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrderWithReply" parameterOrder="order replyURL">
+            <wsdl:input message="impl:dealOrderWithReplyRequest" name="dealOrderWithReplyRequest"/>
+            <wsdl:output message="impl:dealOrderWithReplyResponse" name="dealOrderWithReplyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrderWithoutReply" parameterOrder="order">
+            <wsdl:input message="impl:dealOrderWithoutReplyRequest" name="dealOrderWithoutReplyRequest"/>
+            <wsdl:output message="impl:dealOrderWithoutReplyResponse" name="dealOrderWithoutReplyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAlarmInformationByTimeSegment" parameterOrder="startTime endTime startAlarmID">
+            <wsdl:input message="impl:getAlarmInformationByTimeSegmentRequest" name="getAlarmInformationByTimeSegmentRequest"/>
+            <wsdl:output message="impl:getAlarmInformationByTimeSegmentResponse" name="getAlarmInformationByTimeSegmentResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCPEMsg" parameterOrder="seqnbr ID iFlg">
+            <wsdl:input message="impl:getCPEMsgRequest" name="getCPEMsgRequest"/>
+            <wsdl:output message="impl:getCPEMsgResponse" name="getCPEMsgResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatusConfirm" parameterOrder="cpeID">
+            <wsdl:input message="impl:queryCpeStatusConfirmRequest" name="queryCpeStatusConfirmRequest"/>
+            <wsdl:output message="impl:queryCpeStatusConfirmResponse" name="queryCpeStatusConfirmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatusConfirm" parameterOrder="orderNO">
+            <wsdl:input message="impl:queryOrderStatusConfirmRequest" name="queryOrderStatusConfirmRequest"/>
+            <wsdl:output message="impl:queryOrderStatusConfirmResponse" name="queryOrderStatusConfirmResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatusWithReply" parameterOrder="order replyURL">
+            <wsdl:input message="impl:queryOrderStatusWithReplyRequest" name="queryOrderStatusWithReplyRequest"/>
+            <wsdl:output message="impl:queryOrderStatusWithReplyResponse" name="queryOrderStatusWithReplyResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryUserDetail" parameterOrder="iParaType value">
+            <wsdl:input message="impl:queryUserDetailRequest" name="queryUserDetailRequest"/>
+            <wsdl:output message="impl:queryUserDetailResponse" name="queryUserDetailResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="routeCPECharge" parameterOrder="prodNo accounts password">
+            <wsdl:input message="impl:routeCPEChargeRequest" name="routeCPEChargeRequest"/>
+            <wsdl:output message="impl:routeCPEChargeResponse" name="routeCPEChargeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="serviceChange" parameterOrder="adAcount LSHNo orderType newPassWord">
+            <wsdl:input message="impl:serviceChangeRequest" name="serviceChangeRequest"/>
+            <wsdl:output message="impl:serviceChangeResponse" name="serviceChangeResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="truncateString" parameterOrder="str">
+            <wsdl:input message="impl:truncateStringRequest" name="truncateStringRequest"/>
+            <wsdl:output message="impl:truncateStringResponse" name="truncateStringResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="OperationDistributeServiceSoapBinding" type="impl:ItmsOrderInterface">
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="queryCPEID">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryCPEIDRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryCPEIDResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryCpeStatusRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryCpeStatusResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryCpeStatusRequest1">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryCpeStatusResponse1">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryOrderStatusRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryOrderStatusResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryOrderStatusRequest1">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryOrderStatusResponse1">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryServiceStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryServiceStatusRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryServiceStatusResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrder">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="dealOrderRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="dealOrderResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="populateOrderServiceStruct">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="populateOrderServiceStructRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="populateOrderServiceStructResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="bindInterface">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="bindInterfaceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="bindInterfaceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createService">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="createServiceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="createServiceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrderWithReply">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="dealOrderWithReplyRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="dealOrderWithReplyResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="dealOrderWithoutReply">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="dealOrderWithoutReplyRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="dealOrderWithoutReplyResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAlarmInformationByTimeSegment">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getAlarmInformationByTimeSegmentRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getAlarmInformationByTimeSegmentResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCPEMsg">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getCPEMsgRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getCPEMsgResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryCpeStatusConfirm">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryCpeStatusConfirmRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryCpeStatusConfirmResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatusConfirm">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryOrderStatusConfirmRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryOrderStatusConfirmResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrderStatusWithReply">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryOrderStatusWithReplyRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryOrderStatusWithReplyResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryUserDetail">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryUserDetailRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryUserDetailResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="routeCPECharge">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="routeCPEChargeRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="routeCPEChargeResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="serviceChange">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="serviceChangeRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="serviceChangeResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="truncateString">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="truncateStringRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://order.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="truncateStringResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ItmsOrderInterfaceService">
+        <wsdl:port binding="impl:OperationDistributeServiceSoapBinding" name="OperationDistributeService">
+            <wsdlsoap:address location="http://localhost:8080/jiangsuWS/services/OperationDistributeService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

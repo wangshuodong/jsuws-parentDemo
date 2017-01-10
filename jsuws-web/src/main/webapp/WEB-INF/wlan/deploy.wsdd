@@ -1,0 +1,50 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PonServiceService WSDL service -->
+
+  <service name="PonService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+      <parameter name="wsdlServiceElement" value="PonServiceService"/>
+      <parameter name="schemaUnqualified" value="http://183.207.194.218:6482/NorthInterface/services/PonService,http://xml.apache.org/xml-soap"/>
+      <parameter name="wsdlServicePort" value="PonService"/>
+      <parameter name="className" value="com.cmiot.jsuws.wsb.wlan.PonServiceSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="PonService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://183.207.194.218:6482/NorthInterface/services/PonService"
+        qname="ns:PonActToCms_response"
+        type="java:com.cmiot.jsuws.facade.wlan.model.PonActToCms_response"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://183.207.194.218:6482/NorthInterface/services/PonService"
+        qname="ns:PonActToCms_requestContent"
+        type="java:com.cmiot.jsuws.facade.wlan.model.PonActToCms_requestContent"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://183.207.194.218:6482/NorthInterface/services/PonService"
+        qname="ns:PonActToCms_request"
+        type="java:com.cmiot.jsuws.facade.wlan.model.PonActToCms_request"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>

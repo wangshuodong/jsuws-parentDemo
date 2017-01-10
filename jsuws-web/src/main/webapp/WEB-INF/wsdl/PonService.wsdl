@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://183.207.194.218:6482/NorthInterface/services/PonService" xmlns:impl="http://183.207.194.218:6482/NorthInterface/services/PonService" xmlns:intf="http://183.207.194.218:6482/NorthInterface/services/PonService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://183.207.194.218:6482/NorthInterface/services/PonService">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="PonActToCms_requestContent">
+    <sequence>
+     <element name="AccountId" nillable="true" type="xsd:string"/>
+     <element name="SiteName" nillable="true" type="xsd:string"/>
+     <element name="GimsUserType" nillable="true" type="xsd:string"/>
+     <element name="OnuManufacturer" nillable="true" type="xsd:string"/>
+     <element name="OnuMac" nillable="true" type="xsd:string"/>
+     <element name="Loid" nillable="true" type="xsd:string"/>
+     <element name="AUTH" nillable="true" type="xsd:string"/>
+     <element name="OnuType" nillable="true" type="xsd:string"/>
+     <element name="OltIp" nillable="true" type="xsd:string"/>
+     <element name="OltPonPort" nillable="true" type="xsd:string"/>
+     <element name="PonType" nillable="true" type="xsd:string"/>
+     <element name="UPBW" type="xsd:string"/>
+     <element name="DOWNBW" type="xsd:string"/>
+     <element name="SubFc" nillable="true" type="xsd:string"/>
+     <element name="Cvlan" nillable="true" type="xsd:string"/>
+     <element name="Svlan" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PonActToCms_request">
+    <sequence>
+     <element name="OrderId" nillable="true" type="xsd:string"/>
+     <element name="TaskId" nillable="true" type="xsd:string"/>
+     <element name="ReturnCode" nillable="true" type="xsd:string"/>
+     <element name="Description" nillable="true" type="xsd:string"/>
+     <element name="Content" nillable="true" type="impl:PonActToCms_requestContent"/>
+    </sequence>
+   </complexType>
+   <complexType name="PonActToCms_response">
+    <sequence>
+     <element name="OrderId" nillable="true" type="xsd:string"/>
+     <element name="TaskId" nillable="true" type="xsd:string"/>
+     <element name="ReturnCode" nillable="true" type="xsd:string"/>
+     <element name="Description" nillable="true" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.apache.org/xml-soap">
+   <import namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="mapItem">
+    <sequence>
+     <element name="key" nillable="true" type="xsd:anyType"/>
+     <element name="value" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="Map">
+    <sequence>
+     <element name="item" minOccurs="0" maxOccurs="unbounded" type="apachesoap:mapItem"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="SelectOrderIdResponse">
+
+      <wsdl:part name="SelectOrderIdReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateResponse">
+
+      <wsdl:part name="updateReturn" type="soapenc:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AddVlanRequest">
+
+      <wsdl:part name="Order_Id" type="soapenc:string"/>
+
+      <wsdl:part name="SERVICE" type="soapenc:string"/>
+
+      <wsdl:part name="SERVICE_ID" type="soapenc:string"/>
+
+      <wsdl:part name="SERVICE_FLAG" type="soapenc:string"/>
+
+      <wsdl:part name="Cvlan" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SelectVlanResponse">
+
+      <wsdl:part name="SelectVlanReturn" type="apachesoap:Map"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ponActToCmsRequest">
+
+      <wsdl:part name="parameters" type="impl:PonActToCms_request"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SelectOrderIdRequest">
+
+      <wsdl:part name="OrderId" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ponActToCmsResponse">
+
+      <wsdl:part name="ponActToCmsReturn" type="impl:PonActToCms_response"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AddVlanResponse">
+
+      <wsdl:part name="AddVlanReturn" type="soapenc:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRequest">
+
+      <wsdl:part name="Order_Id" type="soapenc:string"/>
+
+      <wsdl:part name="Cvlan" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="SelectVlanRequest">
+
+      <wsdl:part name="Order_Id" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PonService">
+
+      <wsdl:operation name="update" parameterOrder="Order_Id Cvlan">
+
+         <wsdl:input name="updateRequest" message="impl:updateRequest"/>
+
+         <wsdl:output name="updateResponse" message="impl:updateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ponActToCms" parameterOrder="parameters">
+
+         <wsdl:input name="ponActToCmsRequest" message="impl:ponActToCmsRequest"/>
+
+         <wsdl:output name="ponActToCmsResponse" message="impl:ponActToCmsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SelectOrderId" parameterOrder="OrderId">
+
+         <wsdl:input name="SelectOrderIdRequest" message="impl:SelectOrderIdRequest"/>
+
+         <wsdl:output name="SelectOrderIdResponse" message="impl:SelectOrderIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SelectVlan" parameterOrder="Order_Id">
+
+         <wsdl:input name="SelectVlanRequest" message="impl:SelectVlanRequest"/>
+
+         <wsdl:output name="SelectVlanResponse" message="impl:SelectVlanResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AddVlan" parameterOrder="Order_Id SERVICE SERVICE_ID SERVICE_FLAG Cvlan">
+
+         <wsdl:input name="AddVlanRequest" message="impl:AddVlanRequest"/>
+
+         <wsdl:output name="AddVlanResponse" message="impl:AddVlanResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PonServiceSoapBinding" type="impl:PonService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="update">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRequest">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://pon.itms.zznode.com"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateResponse">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ponActToCms">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ponActToCmsRequest">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://pon.itms.zznode.com"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ponActToCmsResponse">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SelectOrderId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SelectOrderIdRequest">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://pon.itms.zznode.com"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SelectOrderIdResponse">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="SelectVlan">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SelectVlanRequest">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://pon.itms.zznode.com"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SelectVlanResponse">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AddVlan">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AddVlanRequest">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://pon.itms.zznode.com"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AddVlanResponse">
+
+            <wsdlsoap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PonServiceService">
+
+      <wsdl:port name="PonService" binding="impl:PonServiceSoapBinding">
+
+         <wsdlsoap:address location="http://183.207.194.218:6482/NorthInterface/services/PonService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

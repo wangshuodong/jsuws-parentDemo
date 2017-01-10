@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://10.40.103.47:5482/NorthInterface/services/AMSService" xmlns:intf="http://10.40.103.47:5482/NorthInterface/services/AMSService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.40.103.47:5482/NorthInterface/services/AMSService">
+    <!--WSDL created by Apache Axis version: 1.4 Built on Apr 22, 2006 (06:55:48 PDT)-->
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.40.103.47:5482/NorthInterface/services/AMSService">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <complexType name="ReplaceDeviceRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ReplaceDeviceResponseServiceCodeList">
+                <sequence>
+                    <element name="serviceCode" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ReplaceDeviceResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="resultCode" nillable="true" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="serviceCodeList" nillable="true" type="impl:ReplaceDeviceResponseServiceCodeList"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryOrderRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="orderId" nillable="true" type="xsd:string"/>
+                    <element name="serviceCode" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryOrderResponseOrderList">
+                <sequence>
+                    <element name="orderKind" type="xsd:string"/>
+                    <element name="orderDate" type="xsd:string"/>
+                    <element name="resultCode" type="xsd:string"/>
+                    <element name="resultDescr" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryOrderResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="orderId" nillable="true" type="xsd:string"/>
+                    <element name="serviceCode" nillable="true" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="orderList" nillable="true" type="impl:QueryOrderResponseOrderList"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDeviceByLoidRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDeviceByLoidResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="onLine" nillable="true" type="xsd:string"/>
+                    <element name="bindStatus" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDeviceBySNRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDeviceBySNResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                    <element name="onLine" nillable="true" type="xsd:string"/>
+                    <element name="bindStatus" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDevicePasswordRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryDevicePasswordResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="devicePassword" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryServiceStatusRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryServiceStatusResponseServiceList">
+                <sequence>
+                    <element name="serviceCode" type="xsd:string"/>
+                    <element name="serviceStatus" type="xsd:string"/>
+                    <element name="serviceDescr" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="QueryServiceStatusResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="serviceList" nillable="true" type="impl:QueryServiceStatusResponseServiceList"/>
+                </sequence>
+            </complexType>
+            <complexType name="DeviceByHandRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="DeviceByHandResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                    <element name="resultCode" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="SendImplementedInfoRequestServiceCodeList">
+                <sequence>
+                    <element name="serviceCode" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="SendImplementedInfoRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="orderId" nillable="true" type="xsd:string"/>
+                    <element name="orderKind" nillable="true" type="xsd:string"/>
+                    <element name="orderType" nillable="true" type="xsd:string"/>
+                    <element maxOccurs="unbounded" name="serviceCodeList" nillable="true" type="impl:SendImplementedInfoRequestServiceCodeList"/>
+                    <element name="companyName" nillable="true" type="xsd:string"/>
+                    <element name="companyID" nillable="true" type="xsd:string"/>
+                    <element name="className" nillable="true" type="xsd:string"/>
+                    <element name="classID" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="SendImplementedInfoResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="resultCode" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ResetServicesRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ResetServicesResponseServiceCodeList">
+                <sequence>
+                    <element name="serviceCode" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ResetServicesResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="resultCode" nillable="true" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="serviceCodeList" nillable="true" type="impl:ResetServicesResponseServiceCodeList"/>
+                </sequence>
+            </complexType>
+            <complexType name="ResetDeviceRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="ResetDeviceResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="resultCode" nillable="true" type="xsd:string"/>
+                    <element name="operTaskId" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="GetRemoteOperationResultRequest">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="sn" nillable="true" type="xsd:string"/>
+                    <element name="actionName" nillable="true" type="xsd:string"/>
+                    <element name="operTaskId" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <complexType name="GetRemoteOperationResultResponse">
+                <sequence>
+                    <element name="requestId" nillable="true" type="xsd:string"/>
+                    <element name="loid" nillable="true" type="xsd:string"/>
+                    <element name="startTime" nillable="true" type="xsd:string"/>
+                    <element name="endTime" nillable="true" type="xsd:string"/>
+                    <element name="state" nillable="true" type="xsd:string"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="queryDevicePasswordResponse">
+        <wsdl:part name="queryDevicePasswordReturn" type="impl:QueryDevicePasswordResponse"/>
+    </wsdl:message>
+    <wsdl:message name="resetServicesResponse">
+        <wsdl:part name="resetServicesReturn" type="impl:ResetServicesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryDeviceByLoidRequest">
+        <wsdl:part name="parameters" type="impl:QueryDeviceByLoidRequest"/>
+    </wsdl:message>
+    <wsdl:message name="resetServicesRequest">
+        <wsdl:part name="parameters" type="impl:ResetServicesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="queryDeviceBySNRequest">
+        <wsdl:part name="parameters" type="impl:QueryDeviceBySNRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getRemoteOperationResultResponse">
+        <wsdl:part name="getRemoteOperationResultReturn" type="impl:GetRemoteOperationResultResponse"/>
+    </wsdl:message>
+    <wsdl:message name="sendImplementedInfoRequest">
+        <wsdl:part name="parameters" type="impl:SendImplementedInfoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="sendImplementedInfoResponse">
+        <wsdl:part name="sendImplementedInfoReturn" type="impl:SendImplementedInfoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderResponse">
+        <wsdl:part name="queryOrderReturn" type="impl:QueryOrderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryServiceStatusResponse">
+        <wsdl:part name="queryServiceStatusReturn" type="impl:QueryServiceStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="replaceDeviceResponse">
+        <wsdl:part name="replaceDeviceReturn" type="impl:ReplaceDeviceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deviceByHandRequest">
+        <wsdl:part name="parameters" type="impl:DeviceByHandRequest"/>
+    </wsdl:message>
+    <wsdl:message name="resetDeviceResponse">
+        <wsdl:part name="resetDeviceReturn" type="impl:ResetDeviceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="resetDeviceRequest">
+        <wsdl:part name="parameters" type="impl:ResetDeviceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="queryDeviceBySNResponse">
+        <wsdl:part name="queryDeviceBySNReturn" type="impl:QueryDeviceBySNResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryDeviceByLoidResponse">
+        <wsdl:part name="queryDeviceByLoidReturn" type="impl:QueryDeviceByLoidResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deviceByHandResponse">
+        <wsdl:part name="deviceByHandReturn" type="impl:DeviceByHandResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryOrderRequest">
+        <wsdl:part name="parameters" type="impl:QueryOrderRequest"/>
+    </wsdl:message>
+    <wsdl:message name="queryServiceStatusRequest">
+        <wsdl:part name="parameters" type="impl:QueryServiceStatusRequest"/>
+    </wsdl:message>
+    <wsdl:message name="replaceDeviceRequest">
+        <wsdl:part name="parameters" type="impl:ReplaceDeviceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="queryDevicePasswordRequest">
+        <wsdl:part name="parameters" type="impl:QueryDevicePasswordRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getRemoteOperationResultRequest">
+        <wsdl:part name="parameters" type="impl:GetRemoteOperationResultRequest"/>
+    </wsdl:message>
+    <wsdl:portType name="AMSService">
+        <wsdl:operation name="replaceDevice" parameterOrder="parameters">
+            <wsdl:input message="impl:replaceDeviceRequest" name="replaceDeviceRequest"/>
+            <wsdl:output message="impl:replaceDeviceResponse" name="replaceDeviceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrder" parameterOrder="parameters">
+            <wsdl:input message="impl:queryOrderRequest" name="queryOrderRequest"/>
+            <wsdl:output message="impl:queryOrderResponse" name="queryOrderResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryDeviceByLoid" parameterOrder="parameters">
+            <wsdl:input message="impl:queryDeviceByLoidRequest" name="queryDeviceByLoidRequest"/>
+            <wsdl:output message="impl:queryDeviceByLoidResponse" name="queryDeviceByLoidResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryDeviceBySN" parameterOrder="parameters">
+            <wsdl:input message="impl:queryDeviceBySNRequest" name="queryDeviceBySNRequest"/>
+            <wsdl:output message="impl:queryDeviceBySNResponse" name="queryDeviceBySNResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryDevicePassword" parameterOrder="parameters">
+            <wsdl:input message="impl:queryDevicePasswordRequest" name="queryDevicePasswordRequest"/>
+            <wsdl:output message="impl:queryDevicePasswordResponse" name="queryDevicePasswordResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryServiceStatus" parameterOrder="parameters">
+            <wsdl:input message="impl:queryServiceStatusRequest" name="queryServiceStatusRequest"/>
+            <wsdl:output message="impl:queryServiceStatusResponse" name="queryServiceStatusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="deviceByHand" parameterOrder="parameters">
+            <wsdl:input message="impl:deviceByHandRequest" name="deviceByHandRequest"/>
+            <wsdl:output message="impl:deviceByHandResponse" name="deviceByHandResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sendImplementedInfo" parameterOrder="parameters">
+            <wsdl:input message="impl:sendImplementedInfoRequest" name="sendImplementedInfoRequest"/>
+            <wsdl:output message="impl:sendImplementedInfoResponse" name="sendImplementedInfoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="resetServices" parameterOrder="parameters">
+            <wsdl:input message="impl:resetServicesRequest" name="resetServicesRequest"/>
+            <wsdl:output message="impl:resetServicesResponse" name="resetServicesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="resetDevice" parameterOrder="parameters">
+            <wsdl:input message="impl:resetDeviceRequest" name="resetDeviceRequest"/>
+            <wsdl:output message="impl:resetDeviceResponse" name="resetDeviceResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRemoteOperationResult" parameterOrder="parameters">
+            <wsdl:input message="impl:getRemoteOperationResultRequest" name="getRemoteOperationResultRequest"/>
+            <wsdl:output message="impl:getRemoteOperationResultResponse" name="getRemoteOperationResultResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AMSServiceSoapBinding" type="impl:AMSService">
+        <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="replaceDevice">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="replaceDeviceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="replaceDeviceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryOrder">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryOrderRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryOrderResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryDeviceByLoid">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryDeviceByLoidRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryDeviceByLoidResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryDeviceBySN">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryDeviceBySNRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryDeviceBySNResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryDevicePassword">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryDevicePasswordRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryDevicePasswordResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryServiceStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="queryServiceStatusRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="queryServiceStatusResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deviceByHand">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="deviceByHandRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="deviceByHandResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendImplementedInfo">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="sendImplementedInfoRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="sendImplementedInfoResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="resetServices">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="resetServicesRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="resetServicesResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="resetDevice">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="resetDeviceRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="resetDeviceResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRemoteOperationResult">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getRemoteOperationResultRequest">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ams.itms.zznode.com" use="encoded"/>
+            </wsdl:input>
+            <wsdl:output name="getRemoteOperationResultResponse">
+                <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://10.40.103.47:5482/NorthInterface/services/AMSService" use="encoded"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AMSServiceService">
+        <wsdl:port binding="impl:AMSServiceSoapBinding" name="AMSService">
+            <wsdlsoap:address location="http://localhost:8080/jiangsuWS/services/AMSService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
