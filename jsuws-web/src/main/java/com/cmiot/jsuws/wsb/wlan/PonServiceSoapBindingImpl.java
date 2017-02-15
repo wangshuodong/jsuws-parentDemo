@@ -11,10 +11,14 @@ import com.cmiot.hoa.facade.jiangsu.JsWlanServiceFacade;
 import com.cmiot.jsuws.facade.wlan.model.PonActToCms_request;
 import com.cmiot.jsuws.facade.wlan.model.PonActToCms_response;
 import com.cmiot.jsuws.wsb.spring.SpringContextUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
 public class PonServiceSoapBindingImpl implements PonService{
+
+    public static Logger logger = LoggerFactory.getLogger(PonServiceSoapBindingImpl.class);
 
     private JsWlanServiceFacade jsWlanServiceFacade = SpringContextUtils.getBean("jsWlanServiceFacade", JsWlanServiceFacade.class);
 
@@ -23,6 +27,7 @@ public class PonServiceSoapBindingImpl implements PonService{
     }
 
     public PonActToCms_response ponActToCms(PonActToCms_request parameters) throws RemoteException {
+        logger.info("外部调用=》HOA=》RMS入参：{}",parameters);
         return jsWlanServiceFacade.ponActToCms(parameters);
     }
 

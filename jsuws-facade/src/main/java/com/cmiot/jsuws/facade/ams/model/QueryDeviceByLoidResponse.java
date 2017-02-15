@@ -110,4 +110,14 @@ public class QueryDeviceByLoidResponse implements java.io.Serializable {
         this.bindStatus = bindStatus;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryDeviceByLoidResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", onLine='").append(onLine).append('\'');
+        sb.append(", bindStatus='").append(bindStatus).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

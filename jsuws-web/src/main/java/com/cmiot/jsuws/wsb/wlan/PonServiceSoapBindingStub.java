@@ -10,6 +10,7 @@ package com.cmiot.jsuws.wsb.wlan;
 import com.cmiot.jsuws.facade.wlan.model.PonActToCms_request;
 import com.cmiot.jsuws.facade.wlan.model.PonActToCms_requestContent;
 import com.cmiot.jsuws.facade.wlan.model.PonActToCms_response;
+import com.cmiot.jsuws.wsb.utils.SysConfig;
 import org.apache.axis.AxisFault;
 import org.apache.axis.Constants;
 import org.apache.axis.NoEndPointException;
@@ -65,9 +66,9 @@ public class PonServiceSoapBindingStub extends Stub implements PonService {
 
         oper = new OperationDesc();
         oper.setName("ponActToCms");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://183.207.194.218:6482/NorthInterface/services/PonService", "PonActToCms_request"), PonActToCms_request.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.WLAN_QNAME, "PonActToCms_request"), PonActToCms_request.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.218:6482/NorthInterface/services/PonService", "PonActToCms_response"));
+        oper.setReturnType(new QName(SysConfig.WLAN_QNAME, "PonActToCms_response"));
         oper.setReturnClass(PonActToCms_response.class);
         oper.setReturnQName(new QName("", "ponActToCmsReturn"));
         oper.setStyle(Style.RPC);
@@ -146,21 +147,21 @@ public class PonServiceSoapBindingStub extends Stub implements PonService {
             Class simpledf = SimpleDeserializerFactory.class;
             Class simplelistsf = SimpleListSerializerFactory.class;
             Class simplelistdf = SimpleListDeserializerFactory.class;
-            qName = new QName("http://183.207.194.218:6482/NorthInterface/services/PonService", "PonActToCms_request");
+            qName = new QName(SysConfig.WLAN_QNAME, "PonActToCms_request");
             cachedSerQNames.add(qName);
             cls = PonActToCms_request.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new QName("http://183.207.194.218:6482/NorthInterface/services/PonService", "PonActToCms_requestContent");
+            qName = new QName(SysConfig.WLAN_QNAME, "PonActToCms_requestContent");
             cachedSerQNames.add(qName);
             cls = PonActToCms_requestContent.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new QName("http://183.207.194.218:6482/NorthInterface/services/PonService", "PonActToCms_response");
+            qName = new QName(SysConfig.WLAN_QNAME, "PonActToCms_response");
             cachedSerQNames.add(qName);
             cls = PonActToCms_response.class;
             cachedSerClasses.add(cls);

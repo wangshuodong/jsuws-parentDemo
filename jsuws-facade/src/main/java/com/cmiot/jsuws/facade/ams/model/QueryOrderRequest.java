@@ -86,4 +86,13 @@ public class QueryOrderRequest implements java.io.Serializable {
         this.serviceCode = serviceCode;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryOrderRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", orderId='").append(orderId).append('\'');
+        sb.append(", serviceCode='").append(serviceCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

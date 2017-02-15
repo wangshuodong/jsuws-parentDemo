@@ -86,4 +86,13 @@ public class SendImplementedInfoResponse implements java.io.Serializable {
         this.resultCode = resultCode;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SendImplementedInfoResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", resultCode='").append(resultCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

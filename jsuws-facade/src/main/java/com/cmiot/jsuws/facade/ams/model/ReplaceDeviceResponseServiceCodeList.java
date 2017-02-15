@@ -38,4 +38,11 @@ public class ReplaceDeviceResponseServiceCodeList implements java.io.Serializabl
         this.serviceCode = serviceCode;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ReplaceDeviceResponseServiceCodeList{");
+        sb.append("serviceCode='").append(serviceCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -62,4 +62,12 @@ public class QueryDevicePasswordResponse implements java.io.Serializable {
         this.devicePassword = devicePassword;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryDevicePasswordResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", devicePassword='").append(devicePassword).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

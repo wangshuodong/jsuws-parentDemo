@@ -62,4 +62,12 @@ public class ResetServicesRequest implements java.io.Serializable {
         this.loid = loid;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ResetServicesRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

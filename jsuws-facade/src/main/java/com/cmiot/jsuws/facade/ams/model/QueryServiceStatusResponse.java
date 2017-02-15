@@ -7,6 +7,8 @@
 
 package com.cmiot.jsuws.facade.ams.model;
 
+import java.util.Arrays;
+
 public class QueryServiceStatusResponse implements java.io.Serializable {
     private String requestId;
 
@@ -94,4 +96,13 @@ public class QueryServiceStatusResponse implements java.io.Serializable {
         this.serviceList[i] = _value;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryServiceStatusResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", serviceList=").append(Arrays.toString(serviceList));
+        sb.append('}');
+        return sb.toString();
+    }
 }

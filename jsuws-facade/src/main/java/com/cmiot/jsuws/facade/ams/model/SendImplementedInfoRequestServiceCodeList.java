@@ -38,4 +38,11 @@ public class SendImplementedInfoRequestServiceCodeList implements java.io.Serial
         this.serviceCode = serviceCode;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SendImplementedInfoRequestServiceCodeList{");
+        sb.append("serviceCode='").append(serviceCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

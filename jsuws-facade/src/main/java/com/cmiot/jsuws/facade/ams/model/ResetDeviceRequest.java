@@ -86,4 +86,13 @@ public class ResetDeviceRequest implements java.io.Serializable {
         this.sn = sn;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ResetDeviceRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", sn='").append(sn).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

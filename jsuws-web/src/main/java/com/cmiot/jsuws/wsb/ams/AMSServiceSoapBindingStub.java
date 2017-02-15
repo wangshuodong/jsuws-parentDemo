@@ -9,6 +9,7 @@ package com.cmiot.jsuws.wsb.ams;
 
 
 import com.cmiot.jsuws.facade.ams.model.*;
+import com.cmiot.jsuws.wsb.utils.SysConfig;
 import org.apache.axis.AxisFault;
 import org.apache.axis.Constants;
 import org.apache.axis.NoEndPointException;
@@ -49,9 +50,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
         ParameterDesc param;
         oper = new OperationDesc();
         oper.setName("replaceDevice");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ReplaceDeviceRequest"), ReplaceDeviceRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "ReplaceDeviceRequest"), ReplaceDeviceRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ReplaceDeviceResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "ReplaceDeviceResponse"));
         oper.setReturnClass(ReplaceDeviceResponse.class);
         oper.setReturnQName(new QName("", "replaceDeviceReturn"));
         oper.setStyle(Style.RPC);
@@ -60,9 +61,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("queryOrder");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryOrderRequest"), QueryOrderRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "QueryOrderRequest"), QueryOrderRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryOrderResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "QueryOrderResponse"));
         oper.setReturnClass(QueryOrderResponse.class);
         oper.setReturnQName(new QName("", "queryOrderReturn"));
         oper.setStyle(Style.RPC);
@@ -71,9 +72,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("queryDeviceByLoid");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceByLoidRequest"), QueryDeviceByLoidRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "QueryDeviceByLoidRequest"), QueryDeviceByLoidRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceByLoidResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "QueryDeviceByLoidResponse"));
         oper.setReturnClass(QueryDeviceByLoidResponse.class);
         oper.setReturnQName(new QName("", "queryDeviceByLoidReturn"));
         oper.setStyle(Style.RPC);
@@ -82,9 +83,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("queryDeviceBySN");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceBySNRequest"), QueryDeviceBySNRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "QueryDeviceBySNRequest"), QueryDeviceBySNRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceBySNResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "QueryDeviceBySNResponse"));
         oper.setReturnClass(QueryDeviceBySNResponse.class);
         oper.setReturnQName(new QName("", "queryDeviceBySNReturn"));
         oper.setStyle(Style.RPC);
@@ -93,9 +94,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("queryDevicePassword");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDevicePasswordRequest"), QueryDevicePasswordRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "QueryDevicePasswordRequest"), QueryDevicePasswordRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDevicePasswordResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "QueryDevicePasswordResponse"));
         oper.setReturnClass(QueryDevicePasswordResponse.class);
         oper.setReturnQName(new QName("", "queryDevicePasswordReturn"));
         oper.setStyle(Style.RPC);
@@ -104,9 +105,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("queryServiceStatus");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryServiceStatusRequest"), QueryServiceStatusRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "QueryServiceStatusRequest"), QueryServiceStatusRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryServiceStatusResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "QueryServiceStatusResponse"));
         oper.setReturnClass(QueryServiceStatusResponse.class);
         oper.setReturnQName(new QName("", "queryServiceStatusReturn"));
         oper.setStyle(Style.RPC);
@@ -115,9 +116,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("deviceByHand");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "DeviceByHandRequest"), DeviceByHandRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "DeviceByHandRequest"), DeviceByHandRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "DeviceByHandResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "DeviceByHandResponse"));
         oper.setReturnClass(DeviceByHandResponse.class);
         oper.setReturnQName(new QName("", "deviceByHandReturn"));
         oper.setStyle(Style.RPC);
@@ -126,9 +127,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("sendImplementedInfo");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "SendImplementedInfoRequest"), SendImplementedInfoRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "SendImplementedInfoRequest"), SendImplementedInfoRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "SendImplementedInfoResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "SendImplementedInfoResponse"));
         oper.setReturnClass(SendImplementedInfoResponse.class);
         oper.setReturnQName(new QName("", "sendImplementedInfoReturn"));
         oper.setStyle(Style.RPC);
@@ -137,9 +138,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("resetServices");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetServicesRequest"), ResetServicesRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "ResetServicesRequest"), ResetServicesRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetServicesResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "ResetServicesResponse"));
         oper.setReturnClass(ResetServicesResponse.class);
         oper.setReturnQName(new QName("", "resetServicesReturn"));
         oper.setStyle(Style.RPC);
@@ -148,9 +149,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
 
         oper = new OperationDesc();
         oper.setName("resetDevice");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetDeviceRequest"), ResetDeviceRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "ResetDeviceRequest"), ResetDeviceRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetDeviceResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "ResetDeviceResponse"));
         oper.setReturnClass(ResetDeviceResponse.class);
         oper.setReturnQName(new QName("", "resetDeviceReturn"));
         oper.setStyle(Style.RPC);
@@ -164,9 +165,9 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
         ParameterDesc param;
         oper = new OperationDesc();
         oper.setName("getRemoteOperationResult");
-        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "GetRemoteOperationResultRequest"), GetRemoteOperationResultRequest.class, false, false);
+        param = new ParameterDesc(new QName("", "parameters"), ParameterDesc.IN, new QName(SysConfig.AMS_QNAME, "GetRemoteOperationResultRequest"), GetRemoteOperationResultRequest.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "GetRemoteOperationResultResponse"));
+        oper.setReturnType(new QName(SysConfig.AMS_QNAME, "GetRemoteOperationResultResponse"));
         oper.setReturnClass(GetRemoteOperationResultResponse.class);
         oper.setReturnQName(new QName("", "getRemoteOperationResultReturn"));
         oper.setStyle(Style.RPC);
@@ -204,189 +205,189 @@ public class AMSServiceSoapBindingStub extends Stub implements AMSService {
         Class simpledf = SimpleDeserializerFactory.class;
         Class simplelistsf = SimpleListSerializerFactory.class;
         Class simplelistdf = SimpleListDeserializerFactory.class;
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "DeviceByHandRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "DeviceByHandRequest");
         cachedSerQNames.add(qName);
         cls = DeviceByHandRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "DeviceByHandResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "DeviceByHandResponse");
         cachedSerQNames.add(qName);
         cls = DeviceByHandResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "GetRemoteOperationResultRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "GetRemoteOperationResultRequest");
         cachedSerQNames.add(qName);
         cls = GetRemoteOperationResultRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "GetRemoteOperationResultResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "GetRemoteOperationResultResponse");
         cachedSerQNames.add(qName);
         cls = GetRemoteOperationResultResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceByLoidRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDeviceByLoidRequest");
         cachedSerQNames.add(qName);
         cls = QueryDeviceByLoidRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceByLoidResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDeviceByLoidResponse");
         cachedSerQNames.add(qName);
         cls = QueryDeviceByLoidResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceBySNRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDeviceBySNRequest");
         cachedSerQNames.add(qName);
         cls = QueryDeviceBySNRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDeviceBySNResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDeviceBySNResponse");
         cachedSerQNames.add(qName);
         cls = QueryDeviceBySNResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDevicePasswordRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDevicePasswordRequest");
         cachedSerQNames.add(qName);
         cls = QueryDevicePasswordRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryDevicePasswordResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryDevicePasswordResponse");
         cachedSerQNames.add(qName);
         cls = QueryDevicePasswordResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryOrderRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryOrderRequest");
         cachedSerQNames.add(qName);
         cls = QueryOrderRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryOrderResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryOrderResponse");
         cachedSerQNames.add(qName);
         cls = QueryOrderResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryOrderResponseOrderList");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryOrderResponseOrderList");
         cachedSerQNames.add(qName);
         cls = QueryOrderResponseOrderList.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryServiceStatusRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryServiceStatusRequest");
         cachedSerQNames.add(qName);
         cls = QueryServiceStatusRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryServiceStatusResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryServiceStatusResponse");
         cachedSerQNames.add(qName);
         cls = QueryServiceStatusResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "QueryServiceStatusResponseServiceList");
+        qName = new QName(SysConfig.AMS_QNAME, "QueryServiceStatusResponseServiceList");
         cachedSerQNames.add(qName);
         cls = QueryServiceStatusResponseServiceList.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ReplaceDeviceRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "ReplaceDeviceRequest");
         cachedSerQNames.add(qName);
         cls = ReplaceDeviceRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ReplaceDeviceResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "ReplaceDeviceResponse");
         cachedSerQNames.add(qName);
         cls = ReplaceDeviceResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ReplaceDeviceResponseServiceCodeList");
+        qName = new QName(SysConfig.AMS_QNAME, "ReplaceDeviceResponseServiceCodeList");
         cachedSerQNames.add(qName);
         cls = ReplaceDeviceResponseServiceCodeList.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetDeviceRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "ResetDeviceRequest");
         cachedSerQNames.add(qName);
         cls = ResetDeviceRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetDeviceResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "ResetDeviceResponse");
         cachedSerQNames.add(qName);
         cls = ResetDeviceResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetServicesRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "ResetServicesRequest");
         cachedSerQNames.add(qName);
         cls = ResetServicesRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetServicesResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "ResetServicesResponse");
         cachedSerQNames.add(qName);
         cls = ResetServicesResponse.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "ResetServicesResponseServiceCodeList");
+        qName = new QName(SysConfig.AMS_QNAME, "ResetServicesResponseServiceCodeList");
         cachedSerQNames.add(qName);
         cls = ResetServicesResponseServiceCodeList.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "SendImplementedInfoRequest");
+        qName = new QName(SysConfig.AMS_QNAME, "SendImplementedInfoRequest");
         cachedSerQNames.add(qName);
         cls = SendImplementedInfoRequest.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "SendImplementedInfoRequestServiceCodeList");
+        qName = new QName(SysConfig.AMS_QNAME, "SendImplementedInfoRequestServiceCodeList");
         cachedSerQNames.add(qName);
         cls = SendImplementedInfoRequestServiceCodeList.class;
         cachedSerClasses.add(cls);
         cachedSerFactories.add(beansf);
         cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://10.40.103.47:5482/NorthInterface/services/AMSService", "SendImplementedInfoResponse");
+        qName = new QName(SysConfig.AMS_QNAME, "SendImplementedInfoResponse");
         cachedSerQNames.add(qName);
         cls = SendImplementedInfoResponse.class;
         cachedSerClasses.add(cls);

@@ -64,4 +64,12 @@ public class DeviceByHandRequest implements Serializable {
         this.sn = sn;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DeviceByHandRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", sn='").append(sn).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

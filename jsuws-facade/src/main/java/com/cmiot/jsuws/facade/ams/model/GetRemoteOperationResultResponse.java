@@ -134,4 +134,15 @@ public class GetRemoteOperationResultResponse implements java.io.Serializable {
         this.state = state;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GetRemoteOperationResultResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", startTime='").append(startTime).append('\'');
+        sb.append(", endTime='").append(endTime).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

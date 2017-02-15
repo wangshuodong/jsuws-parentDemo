@@ -7,6 +7,8 @@
 
 package com.cmiot.jsuws.facade.ams.model;
 
+import java.util.Arrays;
+
 public class ReplaceDeviceResponse implements java.io.Serializable {
     private String requestId;
 
@@ -118,4 +120,14 @@ public class ReplaceDeviceResponse implements java.io.Serializable {
         this.serviceCodeList[i] = _value;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ReplaceDeviceResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", resultCode='").append(resultCode).append('\'');
+        sb.append(", serviceCodeList=").append(Arrays.toString(serviceCodeList));
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -523,7 +523,7 @@ public class PonActRequest  implements Serializable {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("PonActRequest{");
-        sb.append(", AUTH='").append(AUTH).append('\'');
+        sb.append("AUTH='").append(AUTH).append('\'');
         sb.append(", DOWNBW='").append(DOWNBW).append('\'');
         sb.append(", UPBW='").append(UPBW).append('\'');
         sb.append(", accountId='").append(accountId).append('\'');

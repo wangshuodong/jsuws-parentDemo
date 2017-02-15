@@ -86,4 +86,13 @@ public class DeviceByHandResponse implements java.io.Serializable {
         this.resultCode = resultCode;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("DeviceByHandResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", sn='").append(sn).append('\'');
+        sb.append(", resultCode='").append(resultCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -7,6 +7,8 @@
 
 package com.cmiot.jsuws.facade.ams.model;
 
+import java.util.Arrays;
+
 public class QueryOrderResponse implements java.io.Serializable {
     private String requestId;
 
@@ -118,4 +120,14 @@ public class QueryOrderResponse implements java.io.Serializable {
         this.orderList[i] = _value;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryOrderResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", orderId='").append(orderId).append('\'');
+        sb.append(", serviceCode='").append(serviceCode).append('\'');
+        sb.append(", orderList=").append(Arrays.toString(orderList));
+        sb.append('}');
+        return sb.toString();
+    }
 }

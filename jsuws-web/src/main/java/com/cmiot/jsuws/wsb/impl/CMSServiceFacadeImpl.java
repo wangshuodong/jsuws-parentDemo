@@ -1,9 +1,12 @@
 package com.cmiot.jsuws.wsb.impl;
 
+
 import com.cmiot.jsuws.facade.cms.CMSServiceFacade;
 import com.cmiot.jsuws.facade.cms.model.*;
 import com.cmiot.jsuws.wsb.cms.ItmsOrderInterfaceProxy;
-import com.cmiot.jsuws.wsb.utils.PropertiesUtils;
+import com.cmiot.jsuws.wsb.utils.SysConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
@@ -11,6 +14,7 @@ import java.rmi.RemoteException;
  * Created by ZJL on 2016/12/30.
  */
 public class CMSServiceFacadeImpl implements CMSServiceFacade {
+    public static Logger logger = LoggerFactory.getLogger(CMSServiceFacadeImpl.class);
 
     @Override
     public String[] queryCPEID(String strCPEShortID) throws RemoteException {
@@ -39,23 +43,28 @@ public class CMSServiceFacadeImpl implements CMSServiceFacade {
 
     @Override
     public ServiceStatusRespStruct[] queryServiceStatus(ServiceStatusReqStruct[] req) throws RemoteException {
+        logger.info("RMS=》HOA=》JSWS入参=》queryServiceStatus()：{}",req);
         ServiceStatusRespStruct[] resp = null;
         try {
-            resp = new ItmsOrderInterfaceProxy(PropertiesUtils.getProperty("jiangsu.web.addr.cms")).queryServiceStatus(req);
+            resp = new ItmsOrderInterfaceProxy(SysConfig.CMS_QNAME).queryServiceStatus(req);
         }catch (RemoteException e) {
             new RemoteException("调用江苏webservice异常！" + e.getMessage());
         }
+        logger.info("RMS=》HOA=》JSWS出参=》queryServiceStatus()：{}",resp);
         return resp;
     }
 
     @Override
     public OrderResponse dealOrder(Order order) throws RemoteException {
+        logger.info("RMS=》HOA=》JSWS入参=》dealOrder()：{}",order);
+        logger.info("wangshuodong=》dealOrder()：{}", SysConfig.CMS_QNAME);
         OrderResponse resp = null;
         try {
-            resp = new ItmsOrderInterfaceProxy(PropertiesUtils.getProperty("jiangsu.web.addr.cms")).dealOrder(order);
-        }catch (RemoteException e) {
+            resp = new ItmsOrderInterfaceProxy(SysConfig.CMS_QNAME).dealOrder(order);
+        }catch (Exception e) {
             new RemoteException("调用江苏webservice异常！" + e.getMessage());
         }
+        logger.info("RMS=》HOA=》JSWS出参=》dealOrder()：{}",resp);
         return resp;
     }
 

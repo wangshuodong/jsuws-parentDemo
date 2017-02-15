@@ -86,4 +86,13 @@ public class ResetDeviceResponse implements java.io.Serializable {
         this.operTaskId = operTaskId;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ResetDeviceResponse{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", resultCode='").append(resultCode).append('\'');
+        sb.append(", operTaskId='").append(operTaskId).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

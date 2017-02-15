@@ -7,6 +7,8 @@
 
 package com.cmiot.jsuws.facade.ams.model;
 
+import java.util.Arrays;
+
 public class SendImplementedInfoRequest implements java.io.Serializable {
     private String requestId;
 
@@ -262,4 +264,20 @@ public class SendImplementedInfoRequest implements java.io.Serializable {
         this.classID = classID;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SendImplementedInfoRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", orderId='").append(orderId).append('\'');
+        sb.append(", orderKind='").append(orderKind).append('\'');
+        sb.append(", orderType='").append(orderType).append('\'');
+        sb.append(", serviceCodeList=").append(Arrays.toString(serviceCodeList));
+        sb.append(", companyName='").append(companyName).append('\'');
+        sb.append(", companyID='").append(companyID).append('\'');
+        sb.append(", className='").append(className).append('\'');
+        sb.append(", classID='").append(classID).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

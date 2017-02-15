@@ -10,10 +10,15 @@ package com.cmiot.jsuws.wsb.cms;
 import com.cmiot.hoa.facade.jiangsu.JsCMSServiceFacade;
 import com.cmiot.jsuws.facade.cms.model.*;
 import com.cmiot.jsuws.wsb.spring.SpringContextUtils;
+import com.cmiot.jsuws.wsb.utils.AxisUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.rmi.RemoteException;
 
 public class OperationDistributeServiceSoapBindingImpl implements ItmsOrderInterface {
+
+    public static Logger logger = LoggerFactory.getLogger(OperationDistributeServiceSoapBindingImpl.class);
 
     private JsCMSServiceFacade jsCMSServiceFacade = SpringContextUtils.getBean("jsCMSServiceFacade", JsCMSServiceFacade.class);
 
@@ -38,11 +43,14 @@ public class OperationDistributeServiceSoapBindingImpl implements ItmsOrderInter
     }
 
     public ServiceStatusRespStruct[] queryServiceStatus(ServiceStatusReqStruct[] req) throws RemoteException {
+        logger.info("外部调用=》HOA=》RMS入参：{}",req);
         return jsCMSServiceFacade.queryServiceStatus(req);
     }
 
     public OrderResponse dealOrder(Order order) throws RemoteException {
-        return jsCMSServiceFacade.dealOrder(order);
+        logger.info("外部调用=》HOA=》RMS入参：{}",order);
+        String ip = AxisUtil.getClientIpAxis();
+        return jsCMSServiceFacade.dealOrder(order, ip);
     }
 
     public OrderServiceStruct populateOrderServiceStruct(String newServiceCode, String servName, String servFlag, String argsValue) throws RemoteException {
@@ -96,9 +104,4 @@ public class OperationDistributeServiceSoapBindingImpl implements ItmsOrderInter
     public int serviceChange(String adAcount, String LSHNo, String orderType, String newPassWord) throws RemoteException {
         return -3;
     }
-
-    public String truncateString(String str) throws RemoteException {
-        return null;
-    }
-
 }

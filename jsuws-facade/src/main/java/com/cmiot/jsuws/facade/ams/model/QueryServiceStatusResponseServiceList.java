@@ -86,4 +86,13 @@ public class QueryServiceStatusResponseServiceList implements java.io.Serializab
         this.serviceDescr = serviceDescr;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryServiceStatusResponseServiceList{");
+        sb.append("serviceCode='").append(serviceCode).append('\'');
+        sb.append(", serviceStatus='").append(serviceStatus).append('\'');
+        sb.append(", serviceDescr='").append(serviceDescr).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -62,4 +62,12 @@ public class QueryDeviceBySNRequest implements java.io.Serializable {
         this.sn = sn;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryDeviceBySNRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", sn='").append(sn).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

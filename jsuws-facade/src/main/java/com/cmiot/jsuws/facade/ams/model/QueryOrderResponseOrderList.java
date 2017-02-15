@@ -110,4 +110,14 @@ public class QueryOrderResponseOrderList implements java.io.Serializable {
         this.resultDescr = resultDescr;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("QueryOrderResponseOrderList{");
+        sb.append("orderKind='").append(orderKind).append('\'');
+        sb.append(", orderDate='").append(orderDate).append('\'');
+        sb.append(", resultCode='").append(resultCode).append('\'');
+        sb.append(", resultDescr='").append(resultDescr).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

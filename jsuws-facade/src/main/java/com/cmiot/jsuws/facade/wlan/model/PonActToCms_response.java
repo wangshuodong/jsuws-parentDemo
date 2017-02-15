@@ -228,4 +228,16 @@ public class PonActToCms_response  implements Serializable {
                         _javaType, _xmlType, typeDesc);
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("PonActToCms_response{");
+        sb.append("orderId='").append(orderId).append('\'');
+        sb.append(", taskId='").append(taskId).append('\'');
+        sb.append(", returnCode='").append(returnCode).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", __equalsCalc=").append(__equalsCalc);
+        sb.append(", __hashCodeCalc=").append(__hashCodeCalc);
+        sb.append('}');
+        return sb.toString();
+    }
 }

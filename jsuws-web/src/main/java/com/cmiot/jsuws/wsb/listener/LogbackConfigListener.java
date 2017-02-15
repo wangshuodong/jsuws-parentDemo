@@ -22,8 +22,10 @@ public class LogbackConfigListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent event) {
         try {
             // 从web.xml中加载指定文件名的日志配置文件
-            String logbackConfigLocation = event.getServletContext().getInitParameter(CONFIG_LOCATION);
-            String fn = event.getServletContext().getRealPath(logbackConfigLocation);
+//            String logbackConfigLocation = event.getServletContext().getInitParameter(CONFIG_LOCATION);
+//            String fn = event.getServletContext().getRealPath(logbackConfigLocation);
+            String fn = System.getProperty("logback.configurationFile");
+            logger.info("---------获取到logback地址:{}---------", fn);
             LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
 
             File externalConfigFile = new File(fn);
@@ -45,7 +47,7 @@ public class LogbackConfigListener implements ServletContextListener {
                 }
             }
         } catch (Exception e) {
-
+            logger.info("---------获取到的异常信息:{}---------", e);
         }
     }
 

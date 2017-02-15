@@ -61,7 +61,7 @@
         </encoder>
     </appender>
     <!-- 根日志logger -->
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="jsuws-err"/>
         <appender-ref ref="jsuws-info"/>
     </root>

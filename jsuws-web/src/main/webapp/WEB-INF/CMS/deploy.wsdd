@@ -14,10 +14,10 @@
 
     <service name="OperationDistributeService" provider="java:RPC" style="rpc" use="encoded">
         <parameter name="wsdlTargetNamespace"
-                   value="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"/>
+                   value="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"/>
         <parameter name="wsdlServiceElement" value="ItmsOrderInterfaceService"/>
         <parameter name="schemaUnqualified"
-                   value="OperationDistributeService,http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService,http://order.idl.itms.zznode.com"/>
+                   value="OperationDistributeService,http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService,http://order.idl.itms.zznode.com"/>
         <parameter name="wsdlServicePort" value="OperationDistributeService"/>
         <parameter name="className" value="com.cmiot.jsuws.wsb.cms.OperationDistributeServiceSoapBindingSkeleton"/>
         <parameter name="wsdlPortType" value="ItmsOrderInterface"/>
@@ -25,7 +25,7 @@
         <parameter name="allowedMethods" value="*"/>
 
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:CreatServiceReq"
                 type="java:com.cmiot.jsuws.facade.cms.model.CreatServiceReq"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -33,7 +33,7 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:AlarmStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.AlarmStruct"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -41,7 +41,7 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ServiceStatusReqStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.ServiceStatusReqStruct"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -65,15 +65,15 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOfAlarmStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.AlarmStruct[]"
                 innerType="cmp-ns:AlarmStruct"
-                xmlns:cmp-ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:cmp-ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:OrderResponse"
                 type="java:com.cmiot.jsuws.facade.cms.model.OrderResponse"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -81,14 +81,14 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOf_xsd_anyType"
                 type="java:java.lang.Object[]"
                 innerType="cmp-ns:anyType" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:CPEMsg"
                 type="java:com.cmiot.jsuws.facade.cms.model.CPEMsg"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -104,18 +104,18 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOf_soapenc_string"
                 type="java:java.lang.String[]"
                 innerType="cmp-ns:string" xmlns:cmp-ns="http://schemas.xmlsoap.org/soap/encoding/"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOfServiceStatusReqStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.ServiceStatusReqStruct[]"
                 innerType="cmp-ns:ServiceStatusReqStruct"
-                xmlns:cmp-ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:cmp-ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
@@ -127,7 +127,7 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ServiceStatusRespStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.ServiceStatusRespStruct"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -135,23 +135,23 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOfUserDetail"
                 type="java:com.cmiot.jsuws.facade.cms.model.UserDetail[]"
                 innerType="cmp-ns:UserDetail"
-                xmlns:cmp-ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:cmp-ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOfPVCMsg"
                 type="java:com.cmiot.jsuws.facade.cms.model.PVCMsg[]"
                 innerType="cmp-ns:PVCMsg"
-                xmlns:cmp-ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:cmp-ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:UserDetail"
                 type="java:com.cmiot.jsuws.facade.cms.model.UserDetail"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
@@ -167,15 +167,15 @@
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <arrayMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:ArrayOfServiceStatusRespStruct"
                 type="java:com.cmiot.jsuws.facade.cms.model.ServiceStatusRespStruct[]"
                 innerType="cmp-ns:ServiceStatusRespStruct"
-                xmlns:cmp-ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:cmp-ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
         />
         <typeMapping
-                xmlns:ns="http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService"
+                xmlns:ns="http://10.40.103.46:6482/NorthInterface/services/OperationDistributeService"
                 qname="ns:PVCMsg"
                 type="java:com.cmiot.jsuws.facade.cms.model.PVCMsg"
                 serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"

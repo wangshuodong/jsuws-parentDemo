@@ -659,4 +659,28 @@ public class PonActToCms_requestContent  implements Serializable {
                         _javaType, _xmlType, typeDesc);
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("PonActToCms_requestContent{");
+        sb.append("accountId='").append(accountId).append('\'');
+        sb.append(", siteName='").append(siteName).append('\'');
+        sb.append(", gimsUserType='").append(gimsUserType).append('\'');
+        sb.append(", onuManufacturer='").append(onuManufacturer).append('\'');
+        sb.append(", onuMac='").append(onuMac).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", AUTH='").append(AUTH).append('\'');
+        sb.append(", onuType='").append(onuType).append('\'');
+        sb.append(", oltIp='").append(oltIp).append('\'');
+        sb.append(", oltPonPort='").append(oltPonPort).append('\'');
+        sb.append(", ponType='").append(ponType).append('\'');
+        sb.append(", UPBW='").append(UPBW).append('\'');
+        sb.append(", DOWNBW='").append(DOWNBW).append('\'');
+        sb.append(", subFc='").append(subFc).append('\'');
+        sb.append(", cvlan='").append(cvlan).append('\'');
+        sb.append(", svlan='").append(svlan).append('\'');
+        sb.append(", __equalsCalc=").append(__equalsCalc);
+        sb.append(", __hashCodeCalc=").append(__hashCodeCalc);
+        sb.append('}');
+        return sb.toString();
+    }
 }

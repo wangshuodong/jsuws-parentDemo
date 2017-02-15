@@ -1,526 +1,489 @@
 /**
  * OperationDistributeServiceSoapBindingStub.java
- * <p>
+ *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
 package com.cmiot.jsuws.wsb.cms;
 
-
 import com.cmiot.jsuws.facade.cms.model.*;
-import org.apache.axis.AxisFault;
-import org.apache.axis.Constants;
-import org.apache.axis.NoEndPointException;
-import org.apache.axis.client.Call;
-import org.apache.axis.client.Service;
-import org.apache.axis.client.Stub;
-import org.apache.axis.constants.Style;
-import org.apache.axis.constants.Use;
-import org.apache.axis.description.OperationDesc;
-import org.apache.axis.description.ParameterDesc;
-import org.apache.axis.encoding.DeserializerFactory;
-import org.apache.axis.encoding.SerializerFactory;
-import org.apache.axis.encoding.ser.*;
-import org.apache.axis.soap.SOAPConstants;
-import org.apache.axis.utils.JavaUtils;
+import com.cmiot.jsuws.wsb.utils.SysConfig;
 
-import javax.xml.namespace.QName;
-import java.rmi.RemoteException;
-import java.util.Enumeration;
-import java.util.Vector;
+public class OperationDistributeServiceSoapBindingStub extends org.apache.axis.client.Stub implements ItmsOrderInterface {
+    private java.util.Vector cachedSerClasses = new java.util.Vector();
+    private java.util.Vector cachedSerQNames = new java.util.Vector();
+    private java.util.Vector cachedSerFactories = new java.util.Vector();
+    private java.util.Vector cachedDeserFactories = new java.util.Vector();
 
-public class OperationDistributeServiceSoapBindingStub extends Stub implements ItmsOrderInterface {
-    private Vector cachedSerClasses = new Vector();
-    private Vector cachedSerQNames = new Vector();
-    private Vector cachedSerFactories = new Vector();
-    private Vector cachedDeserFactories = new Vector();
-
-    static OperationDesc[] _operations;
+    static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new OperationDesc[21];
+        _operations = new org.apache.axis.description.OperationDesc[20];
         _initOperationDesc1();
         _initOperationDesc2();
-        _initOperationDesc3();
     }
 
-    private static void _initOperationDesc1() {
-        OperationDesc oper;
-        ParameterDesc param;
-        oper = new OperationDesc();
+    private static void _initOperationDesc1(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryCPEID");
-        param = new ParameterDesc(new QName("", "strCPEShortID"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "strCPEShortID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string"));
         oper.setReturnClass(String[].class);
-        oper.setReturnQName(new QName("", "queryCPEIDReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryCPEIDReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[0] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryCpeStatus");
-        param = new ParameterDesc(new QName("", "cpeId"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cpeId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "queryCpeStatusReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryCpeStatusReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[1] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryCpeStatus");
-        param = new ParameterDesc(new QName("", "cpeStatus"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cpeStatus"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string"));
         oper.setReturnClass(String[].class);
-        oper.setReturnQName(new QName("", "queryCpeStatusReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryCpeStatusReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[2] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryOrderStatus");
-        param = new ParameterDesc(new QName("", "order_No"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "order_No"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "queryOrderStatusReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryOrderStatusReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[3] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryOrderStatus");
-        param = new ParameterDesc(new QName("", "orderStatus"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "orderStatus"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string"));
         oper.setReturnClass(String[].class);
-        oper.setReturnQName(new QName("", "queryOrderStatusReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryOrderStatusReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[4] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryServiceStatus");
-        param = new ParameterDesc(new QName("", "req"), ParameterDesc.IN, new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfServiceStatusReqStruct"), ServiceStatusReqStruct[].class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "req"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfServiceStatusReqStruct"), ServiceStatusReqStruct[].class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfServiceStatusRespStruct"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfServiceStatusRespStruct"));
         oper.setReturnClass(ServiceStatusRespStruct[].class);
-        oper.setReturnQName(new QName("", "queryServiceStatusReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryServiceStatusReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[5] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("dealOrder");
-        param = new ParameterDesc(new QName("", "order"), ParameterDesc.IN, new QName("OperationDistributeService", "Order"), Order.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "order"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("OperationDistributeService", "Order"), Order.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "OrderResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "OrderResponse"));
         oper.setReturnClass(OrderResponse.class);
-        oper.setReturnQName(new QName("", "dealOrderReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "dealOrderReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[6] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("populateOrderServiceStruct");
-        param = new ParameterDesc(new QName("", "newServiceCode"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "newServiceCode"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "servName"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "servName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "servFlag"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "servFlag"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "argsValue"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "argsValue"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://order.idl.itms.zznode.com", "OrderServiceStruct"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://order.idl.itms.zznode.com", "OrderServiceStruct"));
         oper.setReturnClass(OrderServiceStruct.class);
-        oper.setReturnQName(new QName("", "populateOrderServiceStructReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "populateOrderServiceStructReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[7] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("bindInterface");
-        param = new ParameterDesc(new QName("", "command"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "command"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "cpeId"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cpeId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "adAccounts"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "adAccounts"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "nasPortId"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nasPortId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "nasIP"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "nasIP"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "areaNum"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "areaNum"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "vlanId"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "vlanId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "bindInterfaceReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "bindInterfaceReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[8] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("createService");
-        param = new ParameterDesc(new QName("", "req"), ParameterDesc.IN, new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "CreatServiceReq"), CreatServiceReq.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "req"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "CreatServiceReq"), CreatServiceReq.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "createServiceReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "createServiceReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[9] = oper;
 
     }
 
-    private static void _initOperationDesc2() {
-        OperationDesc oper;
-        ParameterDesc param;
-        oper = new OperationDesc();
+    private static void _initOperationDesc2(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("dealOrderWithReply");
-        param = new ParameterDesc(new QName("", "order"), ParameterDesc.IN, new QName("OperationDistributeService", "Order"), Order.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "order"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("OperationDistributeService", "Order"), Order.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "replyURL"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "replyURL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "dealOrderWithReplyReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "dealOrderWithReplyReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[10] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("dealOrderWithoutReply");
-        param = new ParameterDesc(new QName("", "order"), ParameterDesc.IN, new QName("OperationDistributeService", "Order"), Order.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "order"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("OperationDistributeService", "Order"), Order.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "dealOrderWithoutReplyReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "dealOrderWithoutReplyReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[11] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAlarmInformationByTimeSegment");
-        param = new ParameterDesc(new QName("", "startTime"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "startTime"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "endTime"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "endTime"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "startAlarmID"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "startAlarmID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfAlarmStruct"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfAlarmStruct"));
         oper.setReturnClass(AlarmStruct[].class);
-        oper.setReturnQName(new QName("", "getAlarmInformationByTimeSegmentReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getAlarmInformationByTimeSegmentReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[12] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getCPEMsg");
-        param = new ParameterDesc(new QName("", "seqnbr"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "seqnbr"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "ID"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "ID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "iFlg"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "iFlg"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "CPEMsg"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "CPEMsg"));
         oper.setReturnClass(CPEMsg.class);
-        oper.setReturnQName(new QName("", "getCPEMsgReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "getCPEMsgReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[13] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryCpeStatusConfirm");
-        param = new ParameterDesc(new QName("", "cpeID"), ParameterDesc.IN, new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string"), String[].class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cpeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string"), String[].class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "queryCpeStatusConfirmReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryCpeStatusConfirmReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[14] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryOrderStatusConfirm");
-        param = new ParameterDesc(new QName("", "orderNO"), ParameterDesc.IN, new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string"), String[].class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "orderNO"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string"), String[].class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "queryOrderStatusConfirmReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryOrderStatusConfirmReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[15] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryOrderStatusWithReply");
-        param = new ParameterDesc(new QName("", "order"), ParameterDesc.IN, new QName("OperationDistributeService", "Order"), Order.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "order"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("OperationDistributeService", "Order"), Order.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "replyURL"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "replyURL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "queryOrderStatusWithReplyReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryOrderStatusWithReplyReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[16] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("queryUserDetail");
-        param = new ParameterDesc(new QName("", "iParaType"), ParameterDesc.IN, new QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "iParaType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "value"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "value"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfUserDetail"));
+        oper.setReturnType(new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfUserDetail"));
         oper.setReturnClass(UserDetail[].class);
-        oper.setReturnQName(new QName("", "queryUserDetailReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "queryUserDetailReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[17] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("routeCPECharge");
-        param = new ParameterDesc(new QName("", "prodNo"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "prodNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "accounts"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "accounts"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "password"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "routeCPEChargeReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "routeCPEChargeReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[18] = oper;
 
-        oper = new OperationDesc();
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("serviceChange");
-        param = new ParameterDesc(new QName("", "adAcount"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "adAcount"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "LSHNo"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "LSHNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "orderType"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "orderType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new ParameterDesc(new QName("", "newPassWord"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "newPassWord"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new QName("http://www.w3.org/2001/XMLSchema", "int"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
-        oper.setReturnQName(new QName("", "serviceChangeReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "serviceChangeReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
         _operations[19] = oper;
 
     }
 
-    private static void _initOperationDesc3() {
-        OperationDesc oper;
-        ParameterDesc param;
-        oper = new OperationDesc();
-        oper.setName("truncateString");
-        param = new ParameterDesc(new QName("", "str"), ParameterDesc.IN, new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new QName("http://schemas.xmlsoap.org/soap/encoding/", "string"));
-        oper.setReturnClass(String.class);
-        oper.setReturnQName(new QName("", "truncateStringReturn"));
-        oper.setStyle(Style.RPC);
-        oper.setUse(Use.ENCODED);
-        _operations[20] = oper;
-
+    public OperationDistributeServiceSoapBindingStub() throws org.apache.axis.AxisFault {
+         this(null);
     }
 
-    public OperationDistributeServiceSoapBindingStub() throws AxisFault {
-        this(null);
+    public OperationDistributeServiceSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+         this(service);
+         super.cachedEndpoint = endpointURL;
     }
 
-    public OperationDistributeServiceSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws AxisFault {
-        this(service);
-        super.cachedEndpoint = endpointURL;
-    }
-
-    public OperationDistributeServiceSoapBindingStub(javax.xml.rpc.Service service) throws AxisFault {
+    public OperationDistributeServiceSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
         if (service == null) {
-            super.service = new Service();
+            super.service = new org.apache.axis.client.Service();
         } else {
             super.service = service;
         }
-        ((Service) super.service).setTypeMappingVersion("1.2");
-        Class cls;
-        QName qName;
-        QName qName2;
-        Class beansf = BeanSerializerFactory.class;
-        Class beandf = BeanDeserializerFactory.class;
-        Class enumsf = EnumSerializerFactory.class;
-        Class enumdf = EnumDeserializerFactory.class;
-        Class arraysf = ArraySerializerFactory.class;
-        Class arraydf = ArrayDeserializerFactory.class;
-        Class simplesf = SimpleSerializerFactory.class;
-        Class simpledf = SimpleDeserializerFactory.class;
-        Class simplelistsf = SimpleListSerializerFactory.class;
-        Class simplelistdf = SimpleListDeserializerFactory.class;
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "AlarmStruct");
-        cachedSerQNames.add(qName);
-        cls = AlarmStruct.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
+            Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "AlarmStruct");
+            cachedSerQNames.add(qName);
+            cls = AlarmStruct.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_soapenc_string");
-        cachedSerQNames.add(qName);
-        cls = String[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://schemas.xmlsoap.org/soap/encoding/", "string");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_soapenc_string");
+            cachedSerQNames.add(qName);
+            cls = String[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOf_xsd_anyType");
-        cachedSerQNames.add(qName);
-        cls = Object[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://www.w3.org/2001/XMLSchema", "anyType");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOf_xsd_anyType");
+            cachedSerQNames.add(qName);
+            cls = Object[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfAlarmStruct");
-        cachedSerQNames.add(qName);
-        cls = AlarmStruct[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "AlarmStruct");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfAlarmStruct");
+            cachedSerQNames.add(qName);
+            cls = AlarmStruct[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "AlarmStruct");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfPVCMsg");
-        cachedSerQNames.add(qName);
-        cls = PVCMsg[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "PVCMsg");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfPVCMsg");
+            cachedSerQNames.add(qName);
+            cls = PVCMsg[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "PVCMsg");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfServiceStatusReqStruct");
-        cachedSerQNames.add(qName);
-        cls = ServiceStatusReqStruct[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ServiceStatusReqStruct");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfServiceStatusReqStruct");
+            cachedSerQNames.add(qName);
+            cls = ServiceStatusReqStruct[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ServiceStatusReqStruct");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfServiceStatusRespStruct");
-        cachedSerQNames.add(qName);
-        cls = ServiceStatusRespStruct[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ServiceStatusRespStruct");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfServiceStatusRespStruct");
+            cachedSerQNames.add(qName);
+            cls = ServiceStatusRespStruct[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ServiceStatusRespStruct");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ArrayOfUserDetail");
-        cachedSerQNames.add(qName);
-        cls = UserDetail[].class;
-        cachedSerClasses.add(cls);
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "UserDetail");
-        qName2 = null;
-        cachedSerFactories.add(new ArraySerializerFactory(qName, qName2));
-        cachedDeserFactories.add(new ArrayDeserializerFactory());
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ArrayOfUserDetail");
+            cachedSerQNames.add(qName);
+            cls = UserDetail[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "UserDetail");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "CPEMsg");
-        cachedSerQNames.add(qName);
-        cls = CPEMsg.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "CPEMsg");
+            cachedSerQNames.add(qName);
+            cls = CPEMsg.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "CreatServiceReq");
-        cachedSerQNames.add(qName);
-        cls = CreatServiceReq.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "CreatServiceReq");
+            cachedSerQNames.add(qName);
+            cls = CreatServiceReq.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "OrderResponse");
-        cachedSerQNames.add(qName);
-        cls = OrderResponse.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "OrderResponse");
+            cachedSerQNames.add(qName);
+            cls = OrderResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "PVCMsg");
-        cachedSerQNames.add(qName);
-        cls = PVCMsg.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "PVCMsg");
+            cachedSerQNames.add(qName);
+            cls = PVCMsg.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ServiceStatusReqStruct");
-        cachedSerQNames.add(qName);
-        cls = ServiceStatusReqStruct.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ServiceStatusReqStruct");
+            cachedSerQNames.add(qName);
+            cls = ServiceStatusReqStruct.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "ServiceStatusRespStruct");
-        cachedSerQNames.add(qName);
-        cls = ServiceStatusRespStruct.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "ServiceStatusRespStruct");
+            cachedSerQNames.add(qName);
+            cls = ServiceStatusRespStruct.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://183.207.194.211:5482/NorthInterface/services/OperationDistributeService", "UserDetail");
-        cachedSerQNames.add(qName);
-        cls = UserDetail.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName(SysConfig.CMS_QNAME, "UserDetail");
+            cachedSerQNames.add(qName);
+            cls = UserDetail.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("http://order.idl.itms.zznode.com", "OrderServiceStruct");
-        cachedSerQNames.add(qName);
-        cls = OrderServiceStruct.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName("http://order.idl.itms.zznode.com", "OrderServiceStruct");
+            cachedSerQNames.add(qName);
+            cls = OrderServiceStruct.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("OperationDistributeService", "DisctsReq");
-        cachedSerQNames.add(qName);
-        cls = DisctsReq.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName("OperationDistributeService", "DisctsReq");
+            cachedSerQNames.add(qName);
+            cls = DisctsReq.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("OperationDistributeService", "Order");
-        cachedSerQNames.add(qName);
-        cls = Order.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName("OperationDistributeService", "Order");
+            cachedSerQNames.add(qName);
+            cls = Order.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("OperationDistributeService", "ParaMeter");
-        cachedSerQNames.add(qName);
-        cls = ParaMeter.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName("OperationDistributeService", "ParaMeter");
+            cachedSerQNames.add(qName);
+            cls = ParaMeter.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
-        qName = new QName("OperationDistributeService", "SubServiceReq");
-        cachedSerQNames.add(qName);
-        cls = SubServiceReq.class;
-        cachedSerClasses.add(cls);
-        cachedSerFactories.add(beansf);
-        cachedDeserFactories.add(beandf);
+            qName = new javax.xml.namespace.QName("OperationDistributeService", "SubServiceReq");
+            cachedSerQNames.add(qName);
+            cls = SubServiceReq.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
 
     }
 
-    protected Call createCall() throws RemoteException {
+    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
         try {
-            Call _call = super._createCall();
+            org.apache.axis.client.Call _call = super._createCall();
             if (super.maintainSessionSet) {
                 _call.setMaintainSession(super.maintainSession);
             }
@@ -539,7 +502,7 @@ public class OperationDistributeServiceSoapBindingStub extends Stub implements I
             if (super.cachedPortName != null) {
                 _call.setPortName(super.cachedPortName);
             }
-            Enumeration keys = super.cachedProperties.keys();
+            java.util.Enumeration keys = super.cachedProperties.keys();
             while (keys.hasMoreElements()) {
                 String key = (String) keys.nextElement();
                 _call.setProperty(key, super.cachedProperties.get(key));
@@ -552,684 +515,655 @@ public class OperationDistributeServiceSoapBindingStub extends Stub implements I
             synchronized (this) {
                 if (firstCall()) {
                     // must set encoding style before registering serializers
-                    _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-                    _call.setEncodingStyle(Constants.URI_SOAP11_ENC);
+                    _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+                    _call.setEncodingStyle(org.apache.axis.Constants.URI_SOAP11_ENC);
                     for (int i = 0; i < cachedSerFactories.size(); ++i) {
                         Class cls = (Class) cachedSerClasses.get(i);
-                        QName qName =
-                                (QName) cachedSerQNames.get(i);
+                        javax.xml.namespace.QName qName =
+                                (javax.xml.namespace.QName) cachedSerQNames.get(i);
                         Object x = cachedSerFactories.get(i);
                         if (x instanceof Class) {
                             Class sf = (Class)
-                                    cachedSerFactories.get(i);
+                                 cachedSerFactories.get(i);
                             Class df = (Class)
-                                    cachedDeserFactories.get(i);
+                                 cachedDeserFactories.get(i);
                             _call.registerTypeMapping(cls, qName, sf, df, false);
-                        } else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
-                            SerializerFactory sf = (SerializerFactory)
-                                    cachedSerFactories.get(i);
-                            DeserializerFactory df = (DeserializerFactory)
-                                    cachedDeserFactories.get(i);
+                        }
+                        else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
+                            org.apache.axis.encoding.SerializerFactory sf = (org.apache.axis.encoding.SerializerFactory)
+                                 cachedSerFactories.get(i);
+                            org.apache.axis.encoding.DeserializerFactory df = (org.apache.axis.encoding.DeserializerFactory)
+                                 cachedDeserFactories.get(i);
                             _call.registerTypeMapping(cls, qName, sf, df, false);
                         }
                     }
                 }
             }
             return _call;
-        } catch (Throwable _t) {
-            throw new AxisFault("Failure trying to get the Call object", _t);
+        }
+        catch (Throwable _t) {
+            throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
         }
     }
 
-    public String[] queryCPEID(String strCPEShortID) throws RemoteException {
+    public String[] queryCPEID(String strCPEShortID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryCPEID"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryCPEID"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{strCPEShortID});
+ try {        Object _resp = _call.invoke(new Object[] {strCPEShortID});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (String[]) _resp;
-                } catch (Exception _exception) {
-                    return (String[]) JavaUtils.convert(_resp, String[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int queryCpeStatus(String cpeId) throws RemoteException {
+    public int queryCpeStatus(String cpeId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryCpeStatus"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryCpeStatus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{cpeId});
+ try {        Object _resp = _call.invoke(new Object[] {cpeId});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public String[] queryCpeStatus(int cpeStatus) throws RemoteException {
+    public String[] queryCpeStatus(int cpeStatus) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryCpeStatus"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryCpeStatus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{new Integer(cpeStatus)});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(cpeStatus)});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (String[]) _resp;
-                } catch (Exception _exception) {
-                    return (String[]) JavaUtils.convert(_resp, String[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int queryOrderStatus(String order_No) throws RemoteException {
+    public int queryOrderStatus(String order_No) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryOrderStatus"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryOrderStatus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{order_No});
+ try {        Object _resp = _call.invoke(new Object[] {order_No});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public String[] queryOrderStatus(int orderStatus) throws RemoteException {
+    public String[] queryOrderStatus(int orderStatus) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryOrderStatus"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryOrderStatus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{new Integer(orderStatus)});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(orderStatus)});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (String[]) _resp;
-                } catch (Exception _exception) {
-                    return (String[]) JavaUtils.convert(_resp, String[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (String[]) _resp;
+            } catch (Exception _exception) {
+                return (String[]) org.apache.axis.utils.JavaUtils.convert(_resp, String[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public ServiceStatusRespStruct[] queryServiceStatus(ServiceStatusReqStruct[] req) throws RemoteException {
+    public ServiceStatusRespStruct[] queryServiceStatus(ServiceStatusReqStruct[] req) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryServiceStatus"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryServiceStatus"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{req});
+ try {        Object _resp = _call.invoke(new Object[] {req});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (ServiceStatusRespStruct[]) _resp;
-                } catch (Exception _exception) {
-                    return (ServiceStatusRespStruct[]) JavaUtils.convert(_resp, ServiceStatusRespStruct[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (ServiceStatusRespStruct[]) _resp;
+            } catch (Exception _exception) {
+                return (ServiceStatusRespStruct[]) org.apache.axis.utils.JavaUtils.convert(_resp, ServiceStatusRespStruct[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public OrderResponse dealOrder(Order order) throws RemoteException {
+    public OrderResponse dealOrder(Order order) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "dealOrder"));
+        _call.setSOAPActionURI("urn:anonOutInOp");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "dealOrder"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{order});
+ try {        Object _resp = _call.invoke(new Object[] {order});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (OrderResponse) _resp;
-                } catch (Exception _exception) {
-                    return (OrderResponse) JavaUtils.convert(_resp, OrderResponse.class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (OrderResponse) _resp;
+            } catch (Exception _exception) {
+                return (OrderResponse) org.apache.axis.utils.JavaUtils.convert(_resp, OrderResponse.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public OrderServiceStruct populateOrderServiceStruct(String newServiceCode, String servName, String servFlag, String argsValue) throws RemoteException {
+    public OrderServiceStruct populateOrderServiceStruct(String newServiceCode, String servName, String servFlag, String argsValue) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "populateOrderServiceStruct"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "populateOrderServiceStruct"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{newServiceCode, servName, servFlag, argsValue});
+ try {        Object _resp = _call.invoke(new Object[] {newServiceCode, servName, servFlag, argsValue});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (OrderServiceStruct) _resp;
-                } catch (Exception _exception) {
-                    return (OrderServiceStruct) JavaUtils.convert(_resp, OrderServiceStruct.class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (OrderServiceStruct) _resp;
+            } catch (Exception _exception) {
+                return (OrderServiceStruct) org.apache.axis.utils.JavaUtils.convert(_resp, OrderServiceStruct.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int bindInterface(int command, String cpeId, String adAccounts, String nasPortId, String nasIP, String areaNum, String vlanId) throws RemoteException {
+    public int bindInterface(int command, String cpeId, String adAccounts, String nasPortId, String nasIP, String areaNum, String vlanId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "bindInterface"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "bindInterface"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{new Integer(command), cpeId, adAccounts, nasPortId, nasIP, areaNum, vlanId});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(command), cpeId, adAccounts, nasPortId, nasIP, areaNum, vlanId});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int createService(CreatServiceReq req) throws RemoteException {
+    public int createService(CreatServiceReq req) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[9]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "createService"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "createService"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{req});
+ try {        Object _resp = _call.invoke(new Object[] {req});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int dealOrderWithReply(Order order, String replyURL) throws RemoteException {
+    public int dealOrderWithReply(Order order, String replyURL) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[10]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "dealOrderWithReply"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "dealOrderWithReply"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{order, replyURL});
+ try {        Object _resp = _call.invoke(new Object[] {order, replyURL});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int dealOrderWithoutReply(Order order) throws RemoteException {
+    public int dealOrderWithoutReply(Order order) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "dealOrderWithoutReply"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "dealOrderWithoutReply"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{order});
+ try {        Object _resp = _call.invoke(new Object[] {order});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public AlarmStruct[] getAlarmInformationByTimeSegment(String startTime, String endTime, int startAlarmID) throws RemoteException {
+    public AlarmStruct[] getAlarmInformationByTimeSegment(String startTime, String endTime, int startAlarmID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "getAlarmInformationByTimeSegment"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "getAlarmInformationByTimeSegment"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{startTime, endTime, new Integer(startAlarmID)});
+ try {        Object _resp = _call.invoke(new Object[] {startTime, endTime, new Integer(startAlarmID)});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (AlarmStruct[]) _resp;
-                } catch (Exception _exception) {
-                    return (AlarmStruct[]) JavaUtils.convert(_resp, AlarmStruct[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (AlarmStruct[]) _resp;
+            } catch (Exception _exception) {
+                return (AlarmStruct[]) org.apache.axis.utils.JavaUtils.convert(_resp, AlarmStruct[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public CPEMsg getCPEMsg(String seqnbr, String ID, int iFlg) throws RemoteException {
+    public CPEMsg getCPEMsg(String seqnbr, String ID, int iFlg) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "getCPEMsg"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "getCPEMsg"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{seqnbr, ID, new Integer(iFlg)});
+ try {        Object _resp = _call.invoke(new Object[] {seqnbr, ID, new Integer(iFlg)});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (CPEMsg) _resp;
-                } catch (Exception _exception) {
-                    return (CPEMsg) JavaUtils.convert(_resp, CPEMsg.class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (CPEMsg) _resp;
+            } catch (Exception _exception) {
+                return (CPEMsg) org.apache.axis.utils.JavaUtils.convert(_resp, CPEMsg.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int queryCpeStatusConfirm(String[] cpeID) throws RemoteException {
+    public int queryCpeStatusConfirm(String[] cpeID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryCpeStatusConfirm"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryCpeStatusConfirm"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{cpeID});
+ try {        Object _resp = _call.invoke(new Object[] {cpeID});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int queryOrderStatusConfirm(String[] orderNO) throws RemoteException {
+    public int queryOrderStatusConfirm(String[] orderNO) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryOrderStatusConfirm"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryOrderStatusConfirm"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{orderNO});
+ try {        Object _resp = _call.invoke(new Object[] {orderNO});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int queryOrderStatusWithReply(Order order, String replyURL) throws RemoteException {
+    public int queryOrderStatusWithReply(Order order, String replyURL) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryOrderStatusWithReply"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryOrderStatusWithReply"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{order, replyURL});
+ try {        Object _resp = _call.invoke(new Object[] {order, replyURL});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public UserDetail[] queryUserDetail(int iParaType, String value) throws RemoteException {
+    public UserDetail[] queryUserDetail(int iParaType, String value) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[17]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "queryUserDetail"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "queryUserDetail"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{new Integer(iParaType), value});
+ try {        Object _resp = _call.invoke(new Object[] {new Integer(iParaType), value});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (UserDetail[]) _resp;
-                } catch (Exception _exception) {
-                    return (UserDetail[]) JavaUtils.convert(_resp, UserDetail[].class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return (UserDetail[]) _resp;
+            } catch (Exception _exception) {
+                return (UserDetail[]) org.apache.axis.utils.JavaUtils.convert(_resp, UserDetail[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int routeCPECharge(String prodNo, String accounts, String password) throws RemoteException {
+    public int routeCPECharge(String prodNo, String accounts, String password) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[18]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "routeCPECharge"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "routeCPECharge"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{prodNo, accounts, password});
+ try {        Object _resp = _call.invoke(new Object[] {prodNo, accounts, password});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
         }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
-    public int serviceChange(String adAcount, String LSHNo, String orderType, String newPassWord) throws RemoteException {
+    public int serviceChange(String adAcount, String LSHNo, String orderType, String newPassWord) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
+            throw new org.apache.axis.NoEndPointException();
         }
-        Call _call = createCall();
+        org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[19]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "serviceChange"));
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://order.itms.zznode.com", "serviceChange"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{adAcount, LSHNo, orderType, newPassWord});
+ try {        Object _resp = _call.invoke(new Object[] {adAcount, LSHNo, orderType, newPassWord});
 
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return ((Integer) _resp).intValue();
-                } catch (Exception _exception) {
-                    return ((Integer) JavaUtils.convert(_resp, int.class)).intValue();
-                }
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((Integer) _resp).intValue();
+            } catch (Exception _exception) {
+                return ((Integer) org.apache.axis.utils.JavaUtils.convert(_resp, int.class)).intValue();
             }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
         }
-    }
-
-    public String truncateString(String str) throws RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new NoEndPointException();
-        }
-        Call _call = createCall();
-        _call.setOperation(_operations[20]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new QName("http://order.itms.zznode.com", "truncateString"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
-        try {
-            Object _resp = _call.invoke(new Object[]{str});
-
-            if (_resp instanceof RemoteException) {
-                throw (RemoteException) _resp;
-            } else {
-                extractAttachments(_call);
-                try {
-                    return (String) _resp;
-                } catch (Exception _exception) {
-                    return (String) JavaUtils.convert(_resp, String.class);
-                }
-            }
-        } catch (AxisFault axisFaultException) {
-            throw axisFaultException;
-        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
     }
 
 }

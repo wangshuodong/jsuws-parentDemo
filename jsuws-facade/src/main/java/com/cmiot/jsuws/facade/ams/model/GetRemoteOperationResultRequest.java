@@ -134,4 +134,15 @@ public class GetRemoteOperationResultRequest implements java.io.Serializable {
         this.operTaskId = operTaskId;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GetRemoteOperationResultRequest{");
+        sb.append("requestId='").append(requestId).append('\'');
+        sb.append(", loid='").append(loid).append('\'');
+        sb.append(", sn='").append(sn).append('\'');
+        sb.append(", actionName='").append(actionName).append('\'');
+        sb.append(", operTaskId='").append(operTaskId).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

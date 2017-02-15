@@ -2,10 +2,8 @@ package com.cmiot.jsuws.wsb.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -18,13 +16,10 @@ public abstract class PropertiesUtils {
 	static {
 		try {
 			props = new Properties();
-			String location = "application.properties";
-			Resource[] resources = new PathMatchingResourcePatternResolver()
-					.getResources(location);
-
-			for (Resource resource : resources) {
-				PropertiesLoaderUtils.fillProperties(props, resource);
-			}
+			String path =System.getProperty("jsuws.config.path");
+			FileInputStream fileInputStream = new FileInputStream(path);
+			props.load(fileInputStream);
+			fileInputStream.close();
 		} catch (IOException e) {
 			logger.error("加载配置文件出错", e);
 		}
